@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:security="http://www.springframework.org/schema/security"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                                  http://www.springframework.org/schema/beans/spring-beans.xsd
+                                  http://www.springframework.org/schema/security
+                                  http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <security:global-method-security pre-post-annotations="enabled" />
+
+    <security:http pattern="/index.jsp" security="none"/>
+    <security:http pattern="/js/**" security="none"/>
+    <security:http pattern="/css/**" security="none"/>
+    <security:http pattern="/images/**" security="none"/>
+    <security:http pattern="/favicon.ico" security="none"/>
+
+    <security:http auto-config="true" create-session="always"  request-matcher="regex" disable-url-rewriting="false">
+        <security:http-basic />
+        <security:headers disabled="true"/>
+        <security:csrf disabled="true"/>
+        <security:intercept-url pattern="/login.do*" access="permitAll"/>
+        <security:intercept-url pattern="/home.do*" access="hasAnyRole('ROLE_USER','ROLE_ADMIN','ROLE_SUPERADMIN')"/>
+        <security:intercept-url pattern="/user/home.do*" access="hasAnyRole('ROLE_USER','ROLE_ADMIN','ROLE_SUPERADMIN')"/>
+        <security:intercept-url pattern="/admin/home.do*" access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERADMIN')"/>
+        <security:intercept-url pattern="/superadmin/home.do*" access="hasRole('ROLE_SUPERADMIN')"/>
+
+        <security:form-login login-page="/login.do"
+                             username-parameter="j_username"
+                             password-parameter="j_password"
+                             login-processing-url="/j_spring_security_check"
+                             default-target-url="/home.do"
+                             authentication-failure-url="/loginFailed.do?login_error=true"/>
+        <security:access-denied-handler error-page="/access.do"/>
+        <security:logout logout-url="/logout.do"/>
+        <security:session-management invalid-session-url="/login.do"/>
+    </security:http>
+
+    <security:authentication-manager alias="authenticationManager">
+        <security:authentication-provider user-service-ref="userDetailsServiceInMemo">
+            <security:password-encoder hash="plaintext"/>
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+    <security:user-service id="userDetailsServiceInMemo">
+        <security:user name="sadmin" password="sadmin" authorities="ROLE_SUPERADMIN"/>
+        <security:user name="admin" password="admin" authorities="ROLE_ADMIN"/>
+        <security:user name="user" password="user" authorities="ROLE_USER"/>
+    </security:user-service>
+
+   <!-- <security:user-service id="userDetailsServiceInMemo">
+        <security:user name="${sadmin.name}" password="${sadmin.pwd}" authorities="ROLE_SUPERADMIN"/>
+        <security:user name="${admin.name}" password="${admin.pwd}" authorities="ROLE_ADMIN"/>
+        <security:user name="${user.name}" password="${user.pwd}" authorities="ROLE_USER"/>
+    </security:user-service>-->
+
+</beans:beans>

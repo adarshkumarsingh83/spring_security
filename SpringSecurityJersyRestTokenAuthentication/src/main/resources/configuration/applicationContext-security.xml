@@ -1,0 +1,100 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/security
+                           http://www.springframework.org/schema/security/spring-security.xsd">
+
+
+    <context:annotation-config/>
+
+    <security:global-method-security
+            secured-annotations="enabled"
+            jsr250-annotations="enabled"
+            pre-post-annotations="enabled"
+            access-decision-manager-ref="accessDecisionManager">
+    </security:global-method-security>
+
+    <!-- Disable security on static resources -->
+    <security:http request-matcher="regex" pattern="/index.jsp" security="none"/>
+
+
+    <!-- Security configuration for REST services. -->
+    <security:http realm="Api Server"
+                   pattern="/rest/**"
+                   entry-point-ref="apiServerAuthenticationEntryPoint"
+                   use-expressions="true"
+                   auto-config="false"
+                   create-session="stateless" >
+        <security:csrf disabled="true"/>
+
+        <!-- Adds the custom login filter to Spring Security filter chain -->
+        <security:custom-filter ref="authenticationTokenProcessingFilter"
+                                position="FORM_LOGIN_FILTER"/>
+
+        <!-- Configures the security rules of our REST API -->
+        <security:intercept-url pattern="/rest/authenticate/login" access="permitAll()"/>
+        <security:intercept-url pattern="/rest/**" access="hasAnyRole('ROLE_SUPERADMIN','ROLE_ADMIN','ROLE_USER')"/>
+
+
+        <!-- Adds a logout filter to Spring Security filter chain -->
+        <security:logout logout-url="/rest/logout"
+                         delete-cookies="true"
+                         invalidate-session="true"
+                         success-handler-ref="restLogoutSuccessHandler"/>
+
+        <security:access-denied-handler  ref="accessDeniedHandler"/>
+    </security:http>
+
+    <bean id="authenticationTokenProcessingFilter"
+          class="com.adarsh.spring.security.AuthenticationTokenProcessingFilter">
+        <constructor-arg ref="authenticationManager"/>
+    </bean>
+
+    <bean id="accessDeniedHandler" class="com.adarsh.spring.security.AccessDeniedHandler"/>
+
+    <!-- Configures a custom authentication success handler that returns HTTP status code 200 -->
+    <bean id="restAuthenticationSuccessHandler"
+          class="com.adarsh.spring.security.RestAuthenticationSuccessHandler">
+        <property name="alwaysUseDefaultTargetUrl" value="true"/>
+        <property name="defaultTargetUrl" value="/rest/login"/>
+    </bean>
+
+    <!-- Configures a custom authentication failure handler that returns HTTP status code 401 -->
+    <bean id="restAuthenticationFailureHandler"
+          class="com.adarsh.spring.security.RestAuthenticationFailureHandler"/>
+
+    <!-- Configures a custom logout success handler that returns HTTP status code 200 -->
+    <bean id="restLogoutSuccessHandler"
+          class="com.adarsh.spring.security.RestLogoutSuccessHandler"/>
+
+    <bean id="accessDecisionManager" class="org.springframework.security.access.vote.AffirmativeBased">
+        <constructor-arg name="decisionVoters">
+            <list>
+                <bean class="org.springframework.security.access.vote.RoleVoter">
+                    <property name="rolePrefix" value=""/>
+                </bean>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="exceptionTranslationFilter" class="org.springframework.security.web.access.ExceptionTranslationFilter">
+        <constructor-arg name="authenticationEntryPoint" ref="apiServerAuthenticationEntryPoint"/>
+    </bean>
+
+    <security:authentication-manager alias="authenticationManager">
+        <security:authentication-provider user-service-ref="userDetailsServiceImpl"/>
+    <!--    <security:authentication-provider user-service-ref="userDetailsServiceInMemo"/>-->
+    </security:authentication-manager>
+
+   <!-- <security:user-service id="userDetailsServiceInMemo">
+        <security:user name="adarsh" password="adarsh" authorities="ROLE_SUPERADMIN"/>
+        <security:user name="admin" password="admin" authorities="ROLE_ADMIN"/>
+        <security:user name="user" password="user" authorities="ROLE_USER"/>
+    </security:user-service>
+-->
+</beans>
