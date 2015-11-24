@@ -1,0 +1,60 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                       http://www.springframework.org/schema/beans/spring-beans.xsd
+	                       http://www.springframework.org/schema/jdbc
+	                       http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
+
+    <jdbc:initialize-database data-source="dataSource">
+        <jdbc:script location="classpath*:/sql/database.sql"/>
+    </jdbc:initialize-database>
+
+
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+
+        <property name="initialPoolSize" value="${dataSource.initialPoolSize}"/>
+        <property name="minPoolSize" value="${dataSource.minPoolSize}"/>
+        <property name="maxPoolSize" value="${dataSource.maxPoolSize}"/>
+        <property name="acquireIncrement" value="${dataSource.acquireIncrement}"/>
+
+        <!-- slow jdbc operations are passed to helpers, defaults to 3,
+        setting 20 to improve performance as we have enough RAM :) -->
+        <!--  <property name="numHelperThreads" value="${dataSource.numHelperThreads}"/>-->
+
+        <!-- clear out connections not used for 5 minutes -->
+        <property name="maxIdleTime" value="${dataSource.maxIdleTime}"/>
+
+        <!-- milliseconds to wait for a new connection if all connections are full -->
+        <!-- 0 sets the wait time to infinity that is till a connection is released for use. -->
+        <property name="checkoutTimeout" value="${dataSource.checkoutTimeout}"/>
+        <!-- 60 seconds -->
+
+        <!-- maximum connections across all pools.
+        ( maxPoolSize * preparedStatements per pool, assuming 20 statements per pool as max) -->
+        <property name="maxStatements" value="${dataSource.maxStatements}"/>
+
+        <property name="idleConnectionTestPeriod" value="${dataSource.idleConnectionTestPeriod}"/>
+
+        <property name="preferredTestQuery" value="SELECT 1"/>
+
+        <property name="testConnectionOnCheckout" value="${dataSource.testConnectionOnCheckout}"/>
+        <!-- release any connections not returned for 30 minutes -->
+        <!-- usually for webapps its 90 seconds -->
+        <!-- <property name="unreturnedConnectionTimeout" value="90"/>-->
+
+        <!--   <property name="debugUnreturnedConnectionStackTraces" value="true"/>-->
+
+        <!-- runs an idle test ever 5 minutes with the preferred query to test if connections are active and cleanup -->
+        <!--<property name="idleConnectionTestPeriod" value="${dataSource.idleConnectionTestPeriod|600}"/> &lt;!&ndash; seconds &ndash;&gt;-->
+        <!--<property name="preferredTestQuery" value="${dataSource.preferredTestQuery|SELECT 1}"/>-->
+
+        <!-- expensive, and disabled, only enable on testing transactions -->
+        <!--<property name="testConnectionOnCheckout" value="false"/>-->
+        <property name="driverClass" value="${dataSource.driverClass}"/>
+        <property name="jdbcUrl"
+                  value="${dataSource.url}${dataSource.hostname}${dataSource.portNumber}${dataSource.database}${dataSource.extraParam}"/>
+        <property name="user" value="${dataSource.username}"/>
+        <property name="password" value="${dataSource.password}"/>
+    </bean>
+</beans>

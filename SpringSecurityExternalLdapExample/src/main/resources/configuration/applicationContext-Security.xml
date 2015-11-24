@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/security
+                            http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <!-- This is where we configure Spring-Security  -->
+    <security:http auto-config="false"
+                   create-session="always"
+                   use-expressions="true"
+                   request-matcher="regex"
+                   disable-url-rewriting="false">
+
+        <security:headers disabled="true"/>
+        <security:csrf disabled="true"/>
+        <security:http-basic/>
+
+        <security:intercept-url pattern="/espark/auth/login" access="permitAll"/>
+        <security:intercept-url pattern="/espark/main/admin" access="hasRole('ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/espark/main/common" access="hasRole('ROLE_USER')"/>
+
+        <security:form-login
+                login-page="/espark/auth/login"
+                username-parameter="j_username"
+                password-parameter="j_password"
+                login-processing-url="/j_spring_security_check"
+                authentication-failure-url="/espark/auth/login?error=true"
+                default-target-url="/espark/main/common"/>
+
+        <security:access-denied-handler error-page="/espark/auth/denied"/>
+
+        <security:logout
+                invalidate-session="true"
+                logout-success-url="/espark/auth/login"
+                logout-url="/espark/auth/logout"/>
+
+    </security:http>
+
+    <!--
+            For authentication:
+            user-search-filter: the attribute name that contains the user name
+            user-search-base: the base path where to find user information
+
+            For authorization:
+            group-search-filter: the attribute name that contains the full dn of a user
+            group-search-base: the base path where to find role information
+            group-role-attribute: the attribute name that contains the role type
+            role-prefix: the prefix to be added when retrieving role values
+
+            For server access:
+            manager-dn: the full dn of the person that has access to an LDAP server
+            manager-password: the password of the person that has access to an LDAP server
+    -->
+    <security:authentication-manager>
+        <security:authentication-provider user-service-ref="userDetailsService">
+            <security:password-encoder ref="passwordEncoder"/>
+        </security:authentication-provider>
+        <security:ldap-authentication-provider
+                user-search-filter="(uid={0})"
+                user-search-base="ou=users"
+                group-search-filter="(uniqueMember={0})"
+                group-search-base="ou=groups"
+                group-role-attribute="cn"
+                role-prefix="ROLE_">
+        </security:ldap-authentication-provider>
+    </security:authentication-manager>
+
+    <security:ldap-server url="${espark.ldap.url}"
+                          manager-dn="uid=admin,ou=system"
+                          manager-password="secret"/>
+
+    <security:user-service id="userDetailsService">
+        <security:user name="admin" password="21232f297a57a5a743894a0e4a801fc3" authorities="ROLE_USER, ROLE_ADMIN"/>
+        <security:user name="user" password="ee11cbb19052e40b07aac0ca060c23ee" authorities="ROLE_USER"/>
+    </security:user-service>
+
+    <bean id="passwordEncoder" class="org.springframework.security.authentication.encoding.Md5PasswordEncoder"/>
+</beans>

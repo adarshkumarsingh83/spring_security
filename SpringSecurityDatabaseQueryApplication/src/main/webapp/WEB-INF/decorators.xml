@@ -1,0 +1,33 @@
+<!--*
+       * @author Adarsh
+       * @author $LastChangedBy: adarsh $
+       * @version $Revision: 1595 $, $Date:: 5/4/12 6:12 PM#$
+       *
+-->
+
+
+<decorators defaultdir="/WEB-INF/style">
+
+    <excludes>
+        <pattern>/json/*</pattern>
+        <pattern>/xml/*</pattern>
+        <pattern>/txt/*</pattern>
+    </excludes>
+
+    <decorator name="default" page="default/DefaultDecorators.jsp">
+        <pattern>/*</pattern>
+    </decorator>
+
+    <decorator name="superadmin" page="admin/AdminDecorator.jsp">
+        <pattern>/superadmin/*</pattern>
+    </decorator>
+
+    <decorator name="admin" page="admin/AdminDecorator.jsp">
+        <pattern>/admin/*</pattern>
+    </decorator>
+
+    <decorator name="user" page="user/UserDecorator.jsp">
+        <pattern>/user/*</pattern>
+    </decorator>
+
+</decorators>
