@@ -10,3 +10,4 @@ Spring Security exmaple
 - Database jpa Authentication
 - Database dao Authentication
 - Database orm Authentication
+- InMemoryStandAloneApplication
