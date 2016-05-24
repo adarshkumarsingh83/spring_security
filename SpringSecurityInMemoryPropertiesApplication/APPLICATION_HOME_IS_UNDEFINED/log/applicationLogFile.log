@@ -1,0 +1,25 @@
+2016-05-21_21:58:03.981 [qtp7346738-16] INFO  LoginController [LoginController.java:55]- Request Received for Login page
+2016-05-21_21:58:08.311 [qtp7346738-14] INFO  LoginController [LoginController.java:62]- Login failed
+2016-05-21_21:58:51.099 [qtp7346738-15] INFO  ApplicationController [ApplicationController.java:55]- Request Received for Home page
+2016-05-21_21:59:04.482 [qtp7346738-16] INFO  LoginController [LoginController.java:55]- Request Received for Login page
+2016-05-24_21:48:08.978 [qtp7346738-14] INFO  LoginController [LoginController.java:55]- Request Received for Login page
+2016-05-24_21:48:11.899 [qtp7346738-11] INFO  ApplicationController [ApplicationController.java:55]- Request Received for Home page
+2016-05-24_21:48:13.005 [qtp7346738-18] INFO  ApplicationController [ApplicationController.java:82]- Request Received for user page
+2016-05-24_21:48:16.925 [qtp7346738-14] INFO  LoginController [LoginController.java:55]- Request Received for Login page
+2016-05-24_21:48:20.985 [qtp7346738-11] INFO  ApplicationController [ApplicationController.java:55]- Request Received for Home page
+2016-05-24_21:48:23.217 [qtp7346738-17] INFO  LoginController [LoginController.java:55]- Request Received for Login page
+2016-05-24_21:48:30.745 [qtp7346738-15] INFO  ApplicationController [ApplicationController.java:55]- Request Received for Home page
+2016-05-24_21:48:32.307 [qtp7346738-16] INFO  LoginController [LoginController.java:55]- Request Received for Login page
+2016-05-24_21:56:24.767 [qtp7346738-13] INFO  LoginController [LoginController.java:55]- Request Received for Login page
+2016-05-24_21:56:32.194 [qtp7346738-15] INFO  ApplicationController [ApplicationController.java:55]- Request Received for Home page
+2016-05-24_21:56:34.356 [qtp7346738-12] INFO  ApplicationController [ApplicationController.java:64]- Request Received for super admin page
+2016-05-24_21:56:36.981 [qtp7346738-18] INFO  ApplicationController [ApplicationController.java:73]- Request Received for admin page
+2016-05-24_21:56:39.270 [qtp7346738-16] INFO  ApplicationController [ApplicationController.java:82]- Request Received for user page
+2016-05-24_21:56:41.816 [qtp7346738-15] INFO  LoginController [LoginController.java:55]- Request Received for Login page
+2016-05-24_21:56:47.031 [qtp7346738-18] INFO  ApplicationController [ApplicationController.java:55]- Request Received for Home page
+2016-05-24_21:56:56.922 [qtp7346738-17] INFO  ApplicationController [ApplicationController.java:73]- Request Received for admin page
+2016-05-24_21:56:59.632 [qtp7346738-15] INFO  ApplicationController [ApplicationController.java:82]- Request Received for user page
+2016-05-24_21:57:03.048 [qtp7346738-16] INFO  LoginController [LoginController.java:55]- Request Received for Login page
+2016-05-24_21:57:08.252 [qtp7346738-17] INFO  ApplicationController [ApplicationController.java:55]- Request Received for Home page
+2016-05-24_21:57:11.446 [qtp7346738-15] INFO  ApplicationController [ApplicationController.java:82]- Request Received for user page
+2016-05-24_21:57:14.540 [qtp7346738-16] INFO  LoginController [LoginController.java:55]- Request Received for Login page
