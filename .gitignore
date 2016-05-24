@@ -34,9 +34,6 @@
 /**/.idea
 
 #Ignore Visual Studio config
-/**/LucasBroadCastService/packages
-/**/LucasBroadCastService/LucasBroadCastService/bin
-/**/LucasBroadCastService/LucasBroadCastService/obj
 /**/*.suo
 /**/*.dll
 /**/*.pdb
