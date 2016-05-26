@@ -1,0 +1,93 @@
+2016-05-26_21:13:27.628 [qtp396431-16] INFO  LoginController [LoginController.java:56]- Request Received for Login page
+2016-05-26_21:13:33.305 [qtp396431-18] DEBUG c.a.s.s.CustomUserDetailsService [CustomUserDetailsService.java:66]- CustomUserDetailsService loadUserByUsername() 
+2016-05-26_21:13:33.431 [qtp396431-18] ERROR c.a.s.s.CustomUserDetailsService [CustomUserDetailsService.java:79]- Unable to find record with username:=sadmin
+org.springframework.dao.EmptyResultDataAccessException: Incorrect result size: expected 1, actual 0
+	at org.springframework.dao.support.DataAccessUtils.requiredSingleResult(DataAccessUtils.java:71) ~[spring-tx-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:806) ~[spring-jdbc-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.queryForMap(JdbcTemplate.java:839) ~[spring-jdbc-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at com.adarsh.spring.repostiory.UserRepositoryImpl.getUser(UserRepositoryImpl.java:60) ~[classes/:na]
+	at com.adarsh.spring.manager.UserManager.getUser(UserManager.java:57) ~[classes/:na]
+	at com.adarsh.spring.security.CustomUserDetailsService.loadUserByUsername(CustomUserDetailsService.java:69) ~[classes/:na]
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:114) [spring-security-core-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:143) [spring-security-core-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:167) [spring-security-core-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:192) [spring-security-core-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.attemptAuthentication(UsernamePasswordAuthenticationFilter.java:93) [spring-security-web-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:217) [spring-security-web-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:120) [spring-security-web-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:53) [spring-security-web-4.0.0.RELEASE.jar:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:91) [spring-security-web-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:213) [spring-security-web-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:176) [spring-security-web-4.0.0.RELEASE.jar:na]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:344) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:261) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652) [jetty-servlet-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585) [jetty-servlet-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577) [jetty-security-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515) [jetty-servlet-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.Server.handle(Server.java:499) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540) [jetty-io-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_25]
+2016-05-26_21:13:33.445 [qtp396431-16] INFO  LoginController [LoginController.java:63]- Login failed
+2016-05-26_21:13:42.043 [qtp396431-15] DEBUG c.a.s.s.CustomUserDetailsService [CustomUserDetailsService.java:66]- CustomUserDetailsService loadUserByUsername() 
+2016-05-26_21:13:42.115 [qtp396431-12] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_21:13:45.191 [qtp396431-13] INFO  ApplicationController [ApplicationController.java:65]- Request Received for super admin page
+2016-05-26_21:13:47.108 [qtp396431-15] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_21:13:48.028 [qtp396431-12] INFO  ApplicationController [ApplicationController.java:74]- Request Received for admin page
+2016-05-26_21:13:49.199 [qtp396431-18] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_21:13:50.130 [qtp396431-15] INFO  ApplicationController [ApplicationController.java:83]- Request Received for user page
+2016-05-26_21:13:51.260 [qtp396431-12] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_21:13:52.776 [qtp396431-11] INFO  LoginController [LoginController.java:56]- Request Received for Login page
+2016-05-26_21:13:56.593 [qtp396431-18] DEBUG c.a.s.s.CustomUserDetailsService [CustomUserDetailsService.java:66]- CustomUserDetailsService loadUserByUsername() 
+2016-05-26_21:13:56.729 [qtp396431-15] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_21:13:58.342 [qtp396431-12] INFO  ApplicationController [ApplicationController.java:74]- Request Received for admin page
+2016-05-26_21:13:59.587 [qtp396431-18] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_21:14:00.535 [qtp396431-15] INFO  ApplicationController [ApplicationController.java:83]- Request Received for user page
+2016-05-26_21:14:01.707 [qtp396431-16] INFO  LoginController [LoginController.java:56]- Request Received for Login page
+2016-05-26_21:14:05.570 [qtp396431-11] DEBUG c.a.s.s.CustomUserDetailsService [CustomUserDetailsService.java:66]- CustomUserDetailsService loadUserByUsername() 
+2016-05-26_21:14:05.605 [qtp396431-18] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_21:14:07.446 [qtp396431-15] INFO  ApplicationController [ApplicationController.java:83]- Request Received for user page
+2016-05-26_21:14:08.997 [qtp396431-16] INFO  LoginController [LoginController.java:56]- Request Received for Login page
+2016-05-26_21:33:22.078 [qtp31045872-18] INFO  LoginController [LoginController.java:56]- Request Received for Login page
+2016-05-26_21:33:32.445 [qtp31045872-12] DEBUG c.a.s.s.CustomUserDetailsService [CustomUserDetailsService.java:67]- CustomUserDetailsService loadUserByUsername() 
+2016-05-26_21:33:32.660 [qtp31045872-11] INFO  LoginController [LoginController.java:63]- Login failed
+2016-05-26_21:33:37.636 [qtp31045872-14] DEBUG c.a.s.s.CustomUserDetailsService [CustomUserDetailsService.java:67]- CustomUserDetailsService loadUserByUsername() 
+2016-05-26_21:33:37.794 [qtp31045872-18] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_21:33:46.156 [qtp31045872-16] INFO  ApplicationController [ApplicationController.java:65]- Request Received for super admin page
+2016-05-26_21:33:48.088 [qtp31045872-14] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_21:33:50.094 [qtp31045872-18] INFO  ApplicationController [ApplicationController.java:74]- Request Received for admin page
+2016-05-26_21:33:51.443 [qtp31045872-11] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_21:33:52.741 [qtp31045872-14] INFO  ApplicationController [ApplicationController.java:83]- Request Received for user page
+2016-05-26_21:33:54.410 [qtp31045872-18] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_21:33:55.463 [qtp31045872-16] INFO  ApplicationController [ApplicationController.java:65]- Request Received for super admin page
+2016-05-26_21:33:57.143 [qtp31045872-16] INFO  LoginController [LoginController.java:56]- Request Received for Login page
+2016-05-26_21:34:01.645 [qtp31045872-15] DEBUG c.a.s.s.CustomUserDetailsService [CustomUserDetailsService.java:67]- CustomUserDetailsService loadUserByUsername() 
+2016-05-26_21:34:01.796 [qtp31045872-12] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_21:34:06.751 [qtp31045872-11] INFO  ApplicationController [ApplicationController.java:74]- Request Received for admin page
+2016-05-26_21:34:09.063 [qtp31045872-15] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_21:34:10.222 [qtp31045872-12] INFO  ApplicationController [ApplicationController.java:83]- Request Received for user page
+2016-05-26_21:34:11.871 [qtp31045872-11] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_21:34:14.699 [qtp31045872-16] INFO  LoginController [LoginController.java:56]- Request Received for Login page
+2016-05-26_21:34:19.741 [qtp31045872-15] DEBUG c.a.s.s.CustomUserDetailsService [CustomUserDetailsService.java:67]- CustomUserDetailsService loadUserByUsername() 
+2016-05-26_21:34:19.786 [qtp31045872-12] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_21:34:21.905 [qtp31045872-11] INFO  ApplicationController [ApplicationController.java:83]- Request Received for user page
+2016-05-26_21:34:23.524 [qtp31045872-14] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_21:34:25.914 [qtp31045872-15] INFO  LoginController [LoginController.java:56]- Request Received for Login page
