@@ -1,0 +1,383 @@
+2016-05-26_22:12:01.367 [main] INFO  o.h.annotations.common.Version [Version.java:37]- HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2016-05-26_22:12:01.399 [main] INFO  org.hibernate.Version [Version.java:41]- HHH000412: Hibernate Core {4.1.0.Final}
+2016-05-26_22:12:01.404 [main] INFO  org.hibernate.cfg.Environment [Environment.java:239]- HHH000206: hibernate.properties not found
+2016-05-26_22:12:01.409 [main] INFO  org.hibernate.cfg.Environment [Environment.java:342]- HHH000021: Bytecode provider name : javassist
+2016-05-26_22:12:03.311 [main] WARN  o.h.e.jdbc.internal.JdbcServicesImpl [JdbcServicesImpl.java:169]- HHH000342: Could not obtain connection to query metadata : An attempt by a client to checkout a Connection has timed out.
+2016-05-26_22:12:03.322 [main] INFO  org.hibernate.dialect.Dialect [Dialect.java:122]- HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2016-05-26_22:12:03.338 [main] INFO  o.h.e.j.internal.LobCreatorBuilder [LobCreatorBuilder.java:85]- HHH000422: Disabling contextual LOB creation as connection was null
+2016-05-26_22:12:03.423 [main] INFO  o.h.e.t.i.TransactionFactoryInitiator [TransactionFactoryInitiator.java:68]- HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-05-26_22:12:03.434 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory [ASTQueryTranslatorFactory.java:48]- HHH000397: Using ASTQueryTranslatorFactory
+2016-05-26_22:12:03.745 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:182]- HHH000228: Running hbm2ddl schema update
+2016-05-26_22:12:03.747 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:193]- HHH000102: Fetching database metadata
+2016-05-26_22:12:04.358 [main] ERROR o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:201]- HHH000319: Could not get database metadata
+java.sql.SQLException: An attempt by a client to checkout a Connection has timed out.
+	at com.mchange.v2.sql.SqlUtils.toSQLException(SqlUtils.java:106) ~[c3p0-0.9.1.2.jar:0.9.1.2]
+	at com.mchange.v2.sql.SqlUtils.toSQLException(SqlUtils.java:65) ~[c3p0-0.9.1.2.jar:0.9.1.2]
+	at com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool.checkoutPooledConnection(C3P0PooledConnectionPool.java:527) ~[c3p0-0.9.1.2.jar:0.9.1.2]
+	at com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource.getConnection(AbstractPoolBackedDataSource.java:128) ~[c3p0-0.9.1.2.jar:0.9.1.2]
+	at org.hibernate.service.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:141) ~[hibernate-core-4.1.0.Final.jar:4.1.0.Final]
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51) ~[hibernate-core-4.1.0.Final.jar:4.1.0.Final]
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:194) ~[hibernate-core-4.1.0.Final.jar:4.1.0.Final]
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:178) ~[hibernate-core-4.1.0.Final.jar:4.1.0.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:480) ~[hibernate-core-4.1.0.Final.jar:4.1.0.Final]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1740) ~[hibernate-core-4.1.0.Final.jar:4.1.0.Final]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1778) ~[hibernate-core-4.1.0.Final.jar:4.1.0.Final]
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:372) [spring-orm-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:454) [spring-orm-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:439) [spring-orm-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1633) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1120) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1044) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:606) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1210) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1120) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1044) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1210) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:755) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized(ContextHandler.java:800) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.servlet.ServletContextHandler.callContextInitialized(ServletContextHandler.java:444) [jetty-servlet-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:791) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:294) [jetty-servlet-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1349) [jetty-webapp-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.maven.plugin.JettyWebAppContext.startWebapp(JettyWebAppContext.java:296) [jetty-maven-plugin-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1342) [jetty-webapp-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:741) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:505) [jetty-webapp-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.maven.plugin.JettyWebAppContext.doStart(JettyWebAppContext.java:365) [jetty-maven-plugin-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.doStart(ContextHandlerCollection.java:163) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.Server.start(Server.java:387) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:354) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.maven.plugin.JettyServer.doStart(JettyServer.java:73) [jetty-maven-plugin-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.startJetty(AbstractJettyMojo.java:534) [jetty-maven-plugin-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.execute(AbstractJettyMojo.java:357) [jetty-maven-plugin-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.maven.plugin.JettyRunMojo.execute(JettyRunMojo.java:167) [jetty-maven-plugin-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:132) [maven-core-3.2.5.jar:3.2.5]
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:208) [maven-core-3.2.5.jar:3.2.5]
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153) [maven-core-3.2.5.jar:3.2.5]
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145) [maven-core-3.2.5.jar:3.2.5]
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116) [maven-core-3.2.5.jar:3.2.5]
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80) [maven-core-3.2.5.jar:3.2.5]
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51) [maven-core-3.2.5.jar:3.2.5]
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:120) [maven-core-3.2.5.jar:3.2.5]
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:355) [maven-core-3.2.5.jar:3.2.5]
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:155) [maven-core-3.2.5.jar:3.2.5]
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:584) [maven-embedder-3.2.5.jar:3.2.5]
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:216) [maven-embedder-3.2.5.jar:3.2.5]
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:160) [maven-embedder-3.2.5.jar:3.2.5]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_25]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_25]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_25]
+	at java.lang.reflect.Method.invoke(Method.java:483) ~[na:1.8.0_25]
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289) [plexus-classworlds-2.5.2.jar:na]
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229) [plexus-classworlds-2.5.2.jar:na]
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415) [plexus-classworlds-2.5.2.jar:na]
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356) [plexus-classworlds-2.5.2.jar:na]
+Caused by: com.mchange.v2.resourcepool.TimeoutException: A client timed out while waiting to acquire a resource from com.mchange.v2.resourcepool.BasicResourcePool@6d2016 -- timeout at awaitAvailable()
+	at com.mchange.v2.resourcepool.BasicResourcePool.awaitAvailable(BasicResourcePool.java:1317) ~[c3p0-0.9.1.2.jar:0.9.1.2]
+	at com.mchange.v2.resourcepool.BasicResourcePool.prelimCheckoutResource(BasicResourcePool.java:557) ~[c3p0-0.9.1.2.jar:0.9.1.2]
+	at com.mchange.v2.resourcepool.BasicResourcePool.checkoutResource(BasicResourcePool.java:477) ~[c3p0-0.9.1.2.jar:0.9.1.2]
+	at com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool.checkoutPooledConnection(C3P0PooledConnectionPool.java:525) ~[c3p0-0.9.1.2.jar:0.9.1.2]
+	... 102 common frames omitted
+2016-05-26_22:12:04.368 [main] ERROR o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:245]- HHH000299: Could not complete schema update
+java.sql.SQLException: An attempt by a client to checkout a Connection has timed out.
+	at com.mchange.v2.sql.SqlUtils.toSQLException(SqlUtils.java:106) ~[c3p0-0.9.1.2.jar:0.9.1.2]
+	at com.mchange.v2.sql.SqlUtils.toSQLException(SqlUtils.java:65) ~[c3p0-0.9.1.2.jar:0.9.1.2]
+	at com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool.checkoutPooledConnection(C3P0PooledConnectionPool.java:527) ~[c3p0-0.9.1.2.jar:0.9.1.2]
+	at com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource.getConnection(AbstractPoolBackedDataSource.java:128) ~[c3p0-0.9.1.2.jar:0.9.1.2]
+	at org.hibernate.service.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:141) ~[hibernate-core-4.1.0.Final.jar:4.1.0.Final]
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51) ~[hibernate-core-4.1.0.Final.jar:4.1.0.Final]
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:194) ~[hibernate-core-4.1.0.Final.jar:4.1.0.Final]
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:178) ~[hibernate-core-4.1.0.Final.jar:4.1.0.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:480) ~[hibernate-core-4.1.0.Final.jar:4.1.0.Final]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1740) ~[hibernate-core-4.1.0.Final.jar:4.1.0.Final]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1778) ~[hibernate-core-4.1.0.Final.jar:4.1.0.Final]
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:372) [spring-orm-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:454) [spring-orm-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:439) [spring-orm-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1633) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1120) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1044) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:606) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1210) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1120) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1044) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1210) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:755) [spring-beans-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized(ContextHandler.java:800) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.servlet.ServletContextHandler.callContextInitialized(ServletContextHandler.java:444) [jetty-servlet-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:791) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:294) [jetty-servlet-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1349) [jetty-webapp-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.maven.plugin.JettyWebAppContext.startWebapp(JettyWebAppContext.java:296) [jetty-maven-plugin-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1342) [jetty-webapp-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:741) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:505) [jetty-webapp-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.maven.plugin.JettyWebAppContext.doStart(JettyWebAppContext.java:365) [jetty-maven-plugin-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.doStart(ContextHandlerCollection.java:163) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.Server.start(Server.java:387) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:354) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.maven.plugin.JettyServer.doStart(JettyServer.java:73) [jetty-maven-plugin-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.startJetty(AbstractJettyMojo.java:534) [jetty-maven-plugin-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.execute(AbstractJettyMojo.java:357) [jetty-maven-plugin-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.maven.plugin.JettyRunMojo.execute(JettyRunMojo.java:167) [jetty-maven-plugin-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:132) [maven-core-3.2.5.jar:3.2.5]
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:208) [maven-core-3.2.5.jar:3.2.5]
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153) [maven-core-3.2.5.jar:3.2.5]
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145) [maven-core-3.2.5.jar:3.2.5]
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116) [maven-core-3.2.5.jar:3.2.5]
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80) [maven-core-3.2.5.jar:3.2.5]
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51) [maven-core-3.2.5.jar:3.2.5]
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:120) [maven-core-3.2.5.jar:3.2.5]
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:355) [maven-core-3.2.5.jar:3.2.5]
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:155) [maven-core-3.2.5.jar:3.2.5]
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:584) [maven-embedder-3.2.5.jar:3.2.5]
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:216) [maven-embedder-3.2.5.jar:3.2.5]
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:160) [maven-embedder-3.2.5.jar:3.2.5]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_25]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_25]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_25]
+	at java.lang.reflect.Method.invoke(Method.java:483) ~[na:1.8.0_25]
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289) [plexus-classworlds-2.5.2.jar:na]
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229) [plexus-classworlds-2.5.2.jar:na]
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415) [plexus-classworlds-2.5.2.jar:na]
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356) [plexus-classworlds-2.5.2.jar:na]
+Caused by: com.mchange.v2.resourcepool.TimeoutException: A client timed out while waiting to acquire a resource from com.mchange.v2.resourcepool.BasicResourcePool@6d2016 -- timeout at awaitAvailable()
+	at com.mchange.v2.resourcepool.BasicResourcePool.awaitAvailable(BasicResourcePool.java:1317) ~[c3p0-0.9.1.2.jar:0.9.1.2]
+	at com.mchange.v2.resourcepool.BasicResourcePool.prelimCheckoutResource(BasicResourcePool.java:557) ~[c3p0-0.9.1.2.jar:0.9.1.2]
+	at com.mchange.v2.resourcepool.BasicResourcePool.checkoutResource(BasicResourcePool.java:477) ~[c3p0-0.9.1.2.jar:0.9.1.2]
+	at com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool.checkoutPooledConnection(C3P0PooledConnectionPool.java:525) ~[c3p0-0.9.1.2.jar:0.9.1.2]
+	... 102 common frames omitted
+2016-05-26_22:13:23.596 [main] INFO  o.h.annotations.common.Version [Version.java:37]- HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2016-05-26_22:13:23.615 [main] INFO  org.hibernate.Version [Version.java:41]- HHH000412: Hibernate Core {4.1.0.Final}
+2016-05-26_22:13:23.620 [main] INFO  org.hibernate.cfg.Environment [Environment.java:239]- HHH000206: hibernate.properties not found
+2016-05-26_22:13:23.623 [main] INFO  org.hibernate.cfg.Environment [Environment.java:342]- HHH000021: Bytecode provider name : javassist
+2016-05-26_22:13:24.764 [main] INFO  org.hibernate.dialect.Dialect [Dialect.java:122]- HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2016-05-26_22:13:24.848 [main] INFO  o.h.e.j.internal.LobCreatorBuilder [LobCreatorBuilder.java:120]- HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-05-26_22:13:24.880 [main] INFO  o.h.e.t.i.TransactionFactoryInitiator [TransactionFactoryInitiator.java:68]- HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-05-26_22:13:24.891 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory [ASTQueryTranslatorFactory.java:48]- HHH000397: Using ASTQueryTranslatorFactory
+2016-05-26_22:13:25.220 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:182]- HHH000228: Running hbm2ddl schema update
+2016-05-26_22:13:25.221 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:193]- HHH000102: Fetching database metadata
+2016-05-26_22:13:25.227 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:205]- HHH000396: Updating schema
+2016-05-26_22:13:25.237 [main] INFO  java.sql.DatabaseMetaData [DatabaseMetadata.java:120]- HHH000262: Table not found: User
+2016-05-26_22:13:25.239 [main] INFO  java.sql.DatabaseMetaData [DatabaseMetadata.java:120]- HHH000262: Table not found: UserRole
+2016-05-26_22:13:25.241 [main] INFO  java.sql.DatabaseMetaData [DatabaseMetadata.java:120]- HHH000262: Table not found: user_role_mapping
+2016-05-26_22:13:25.244 [main] INFO  java.sql.DatabaseMetaData [DatabaseMetadata.java:120]- HHH000262: Table not found: User
+2016-05-26_22:13:25.249 [main] INFO  java.sql.DatabaseMetaData [DatabaseMetadata.java:120]- HHH000262: Table not found: UserRole
+2016-05-26_22:13:25.252 [main] INFO  java.sql.DatabaseMetaData [DatabaseMetadata.java:120]- HHH000262: Table not found: user_role_mapping
+2016-05-26_22:13:30.201 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:240]- HHH000232: Schema update complete
+2016-05-26_22:13:50.765 [qtp27099635-11] INFO  LoginController [LoginController.java:56]- Request Received for Login page
+2016-05-26_22:13:57.049 [qtp27099635-14] DEBUG CustomUserDetailsService [CustomUserDetailsService.java:68]- DbUserDetailsService loadUserByUsername() 
+2016-05-26_22:13:57.345 [qtp27099635-14] ERROR CustomUserDetailsService [CustomUserDetailsService.java:81]- Unable to find record with username:=sadmin
+java.lang.NullPointerException: null
+	at com.adarsh.spring.security.CustomUserDetailsService.loadUserByUsername(CustomUserDetailsService.java:72) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_25]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_25]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_25]
+	at java.lang.reflect.Method.invoke(Method.java:483) ~[na:1.8.0_25]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317) [spring-aop-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190) [spring-aop-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) [spring-aop-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99) [spring-tx-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:281) [spring-tx-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96) [spring-tx-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) [spring-aop-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207) [spring-aop-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at com.sun.proxy.$Proxy49.loadUserByUsername(Unknown Source) [na:na]
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:114) [spring-security-core-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:143) [spring-security-core-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:167) [spring-security-core-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:192) [spring-security-core-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.attemptAuthentication(UsernamePasswordAuthenticationFilter.java:93) [spring-security-web-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:217) [spring-security-web-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:120) [spring-security-web-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:53) [spring-security-web-4.0.0.RELEASE.jar:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:91) [spring-security-web-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:213) [spring-security-web-4.0.0.RELEASE.jar:na]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:176) [spring-security-web-4.0.0.RELEASE.jar:na]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:344) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:261) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652) [jetty-servlet-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585) [jetty-servlet-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577) [jetty-security-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515) [jetty-servlet-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.Server.handle(Server.java:499) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540) [jetty-io-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_25]
+2016-05-26_22:13:57.411 [qtp27099635-11] INFO  LoginController [LoginController.java:63]- Login failed
+2016-05-26_22:14:05.648 [qtp27099635-12] DEBUG CustomUserDetailsService [CustomUserDetailsService.java:68]- DbUserDetailsService loadUserByUsername() 
+2016-05-26_22:14:05.845 [qtp27099635-18] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_22:14:09.733 [qtp27099635-15] INFO  ApplicationController [ApplicationController.java:65]- Request Received for super admin page
+2016-05-26_22:14:11.691 [qtp27099635-12] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_22:14:12.799 [qtp27099635-18] INFO  ApplicationController [ApplicationController.java:74]- Request Received for admin page
+2016-05-26_22:14:14.229 [qtp27099635-11] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_22:14:15.259 [qtp27099635-12] INFO  ApplicationController [ApplicationController.java:83]- Request Received for user page
+2016-05-26_22:14:16.755 [qtp27099635-18] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_22:14:18.278 [qtp27099635-14] INFO  LoginController [LoginController.java:56]- Request Received for Login page
+2016-05-26_22:14:23.942 [qtp27099635-11] DEBUG CustomUserDetailsService [CustomUserDetailsService.java:68]- DbUserDetailsService loadUserByUsername() 
+2016-05-26_22:14:23.959 [qtp27099635-12] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_22:14:25.838 [qtp27099635-18] INFO  ApplicationController [ApplicationController.java:74]- Request Received for admin page
+2016-05-26_22:14:27.220 [qtp27099635-11] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_22:14:28.236 [qtp27099635-12] INFO  ApplicationController [ApplicationController.java:83]- Request Received for user page
+2016-05-26_22:14:29.179 [qtp27099635-17] INFO  LoginController [LoginController.java:56]- Request Received for Login page
+2016-05-26_22:14:33.012 [qtp27099635-14] DEBUG CustomUserDetailsService [CustomUserDetailsService.java:68]- DbUserDetailsService loadUserByUsername() 
+2016-05-26_22:14:33.036 [qtp27099635-11] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_22:14:34.937 [qtp27099635-12] INFO  ApplicationController [ApplicationController.java:83]- Request Received for user page
+2016-05-26_22:14:36.846 [qtp27099635-17] INFO  LoginController [LoginController.java:56]- Request Received for Login page
+2016-05-26_22:14:38.825 [qtp27099635-14] DEBUG CustomUserDetailsService [CustomUserDetailsService.java:68]- DbUserDetailsService loadUserByUsername() 
+2016-05-26_22:14:38.869 [qtp27099635-11] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_22:14:41.034 [qtp27099635-15] INFO  LoginController [LoginController.java:56]- Request Received for Login page
+2016-05-26_23:19:49.358 [main] INFO  o.h.annotations.common.Version [Version.java:37]- HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2016-05-26_23:19:49.427 [main] INFO  org.hibernate.Version [Version.java:41]- HHH000412: Hibernate Core {4.1.0.Final}
+2016-05-26_23:19:49.433 [main] INFO  org.hibernate.cfg.Environment [Environment.java:239]- HHH000206: hibernate.properties not found
+2016-05-26_23:19:49.437 [main] INFO  org.hibernate.cfg.Environment [Environment.java:342]- HHH000021: Bytecode provider name : javassist
+2016-05-26_23:19:51.191 [main] WARN  o.h.e.jdbc.internal.JdbcServicesImpl [JdbcServicesImpl.java:169]- HHH000342: Could not obtain connection to query metadata : An attempt by a client to checkout a Connection has timed out.
+2016-05-26_23:19:51.527 [main] INFO  org.hibernate.dialect.Dialect [Dialect.java:122]- HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2016-05-26_23:19:51.607 [main] INFO  o.h.e.j.internal.LobCreatorBuilder [LobCreatorBuilder.java:85]- HHH000422: Disabling contextual LOB creation as connection was null
+2016-05-26_23:19:52.018 [main] INFO  o.h.e.t.i.TransactionFactoryInitiator [TransactionFactoryInitiator.java:68]- HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-05-26_23:19:52.205 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory [ASTQueryTranslatorFactory.java:48]- HHH000397: Using ASTQueryTranslatorFactory
+2016-05-26_23:19:53.324 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:182]- HHH000228: Running hbm2ddl schema update
+2016-05-26_23:19:53.328 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:193]- HHH000102: Fetching database metadata
+2016-05-26_23:19:53.466 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:205]- HHH000396: Updating schema
+2016-05-26_23:19:53.588 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:65]- HHH000261: Table found: espark.user
+2016-05-26_23:19:53.689 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:66]- HHH000037: Columns: [firstname, createddate, userphone, modifieddate, userpwd, id, enabled, lastname, useremail, username]
+2016-05-26_23:19:53.695 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:68]- HHH000108: Foreign keys: []
+2016-05-26_23:19:53.701 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:69]- HHH000126: Indexes: [id, primary, username]
+2016-05-26_23:19:53.808 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:65]- HHH000261: Table found: espark.userrole
+2016-05-26_23:19:53.810 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:66]- HHH000037: Columns: [name, id]
+2016-05-26_23:19:53.811 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:68]- HHH000108: Foreign keys: []
+2016-05-26_23:19:53.812 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:69]- HHH000126: Indexes: [id, primary]
+2016-05-26_23:19:53.922 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:65]- HHH000261: Table found: espark.user_role_mapping
+2016-05-26_23:19:53.960 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:66]- HHH000037: Columns: [userroles_id, user_id]
+2016-05-26_23:19:53.962 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:68]- HHH000108: Foreign keys: [fk5d9a9f9995f6035, fk5d9a9f9181c6e86]
+2016-05-26_23:19:53.973 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:69]- HHH000126: Indexes: [fk5d9a9f9995f6035, fk5d9a9f9181c6e86, primary]
+2016-05-26_23:19:53.975 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:240]- HHH000232: Schema update complete
+2016-05-26_23:20:14.118 [qtp27099635-11] INFO  LoginController [LoginController.java:56]- Request Received for Login page
+2016-05-26_23:20:30.264 [qtp27099635-13] DEBUG CustomUserDetailsService [CustomUserDetailsService.java:68]- DbUserDetailsService loadUserByUsername() 
+2016-05-26_23:20:30.976 [qtp27099635-13] INFO  LoginController [LoginController.java:63]- Login failed
+2016-05-26_23:20:40.704 [qtp27099635-11] DEBUG CustomUserDetailsService [CustomUserDetailsService.java:68]- DbUserDetailsService loadUserByUsername() 
+2016-05-26_23:20:40.811 [qtp27099635-18] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_23:21:02.765 [qtp27099635-12] INFO  ApplicationController [ApplicationController.java:65]- Request Received for super admin page
+2016-05-26_23:21:05.270 [qtp27099635-11] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_23:21:06.421 [qtp27099635-18] INFO  ApplicationController [ApplicationController.java:74]- Request Received for admin page
+2016-05-26_23:21:08.645 [qtp27099635-17] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_23:21:09.822 [qtp27099635-13] INFO  ApplicationController [ApplicationController.java:83]- Request Received for user page
+2016-05-26_23:21:11.966 [qtp27099635-11] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_23:21:13.501 [qtp27099635-14] INFO  LoginController [LoginController.java:56]- Request Received for Login page
+2016-05-26_23:21:21.835 [qtp27099635-13] DEBUG CustomUserDetailsService [CustomUserDetailsService.java:68]- DbUserDetailsService loadUserByUsername() 
+2016-05-26_23:21:21.890 [qtp27099635-11] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_23:21:26.537 [qtp27099635-18] INFO  ApplicationController [ApplicationController.java:74]- Request Received for admin page
+2016-05-26_23:21:27.793 [qtp27099635-13] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_23:21:28.906 [qtp27099635-11] INFO  ApplicationController [ApplicationController.java:83]- Request Received for user page
+2016-05-26_23:21:31.002 [qtp27099635-18] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_23:21:32.656 [qtp27099635-17] INFO  LoginController [LoginController.java:56]- Request Received for Login page
+2016-05-26_23:21:37.409 [qtp27099635-13] DEBUG CustomUserDetailsService [CustomUserDetailsService.java:68]- DbUserDetailsService loadUserByUsername() 
+2016-05-26_23:21:37.435 [qtp27099635-11] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_23:21:40.897 [qtp27099635-18] INFO  ApplicationController [ApplicationController.java:83]- Request Received for user page
+2016-05-26_23:21:42.977 [qtp27099635-12] INFO  ApplicationController [ApplicationController.java:56]- Request Received for Home page
+2016-05-26_23:21:46.000 [qtp27099635-13] INFO  LoginController [LoginController.java:56]- Request Received for Login page

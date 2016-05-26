@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+        * @author Adarsh Kumar
+        * @author $LastChangedBy: Adarsh Kumar$
+        * @version $Revision: 0001 $, $Date:: 1/1/10 0:00 AM#$
+        * @Espark @copyright all right reserve
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       default-init-method="init" default-destroy-method="destroy"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                            http://www.springframework.org/schema/tx
+                            http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+                            http://www.springframework.org/schema/context
+                            http://www.springframework.org/schema/context/spring-context.xsd
+                            http://www.springframework.org/schema/util
+                            http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+    <!-- DAO declarations -->
+    <!-- we are using org.springframework.stereotype.Repository to register all our Repositories -->
+    <bean id="repositoryImpl" class="com.adarsh.spring.repository.construct.AbstractRepository"
+          abstract="true">
+        <property name="sessionFactory" ref="hibernateSessionFactory"/>
+    </bean>
+
+    <context:component-scan base-package="com.adarsh.spring.repository.impl">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+    </context:component-scan>
+
+
+    <util:list id="hibernatePackagesToScan">
+        <value>com.adarsh.spring.entity.impl</value>
+    </util:list>
+
+
+    <bean id="hibernateSessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="packagesToScan" ref="hibernatePackagesToScan"/>
+        <property name="hibernateProperties" ref="defaultHibernateProperties"/>
+    </bean>
+
+
+    <bean id="defaultHibernateProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="properties">
+            <props>
+                <prop key="hibernate.hbm2ddl.auto">
+                    ${hibernate.hbm2ddl.auto}
+                </prop>
+                <prop key="hibernate.max_fetch_depth">
+                    ${hibernate.max_fetch_depth}
+                </prop>
+                <prop key="hibernate.jdbc.batch_size">
+                    ${hibernate.batch_size}
+                </prop>
+                <prop key="hibernate.jdbc.use_scrollable_resultset">
+                    ${hibernate.jdbc.use_scrollable_resultset}
+                </prop>
+                <prop key="hibernate.dialect">
+                    ${hibernate.dialect}
+                </prop>
+
+                <!-- caching -->
+
+                <prop key="hibernate.cache.provider_class">
+                    ${hibernate.cache.provider_class}
+                </prop>
+                <prop key="hibernate.cache.use_second_level_cache">
+                    ${hibernate.cache.use_second_level_cache}
+                </prop>
+
+                <!-- <prop key="hibernate.cache.use_query_cache">
+                    ${hibernate.cache.use_query_cache}
+                </prop>-->
+
+                <!--  logging & stats -->
+                <prop key="hibernate.show_sql">
+                    ${hibernate.show_sql}
+                </prop>
+                <prop key="hibernate.format_sql">
+                    ${hibernate.format_sql}
+                </prop>
+                <prop key="hibernate.generate_statistics">
+                    ${hibernate.generate_statistics}
+                </prop>
+
+                <!--<prop key="hibernate.bytecode.use_reflection_optimizer">false</prop>-->
+                <!-- Uncomment the following two properties for JBoss only -->
+                <!--<prop key="hibernate.validator.apply_to_ddl">false</prop>-->
+                <!--<prop key="hibernate.validator.autoregister_listeners">false</prop>-->
+                <!-- this property is ignored as we use sourcen to handle transactions -->
+                <!--<prop key="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</prop>-->
+            </props>
+        </property>
+    </bean>
+
+    <!-- ========= Transactions =========-->
+    <!-- == TRANSACTIONS == -->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="hibernateSessionFactory"/>
+    </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager" mode="proxy"/>
+
+</beans>
