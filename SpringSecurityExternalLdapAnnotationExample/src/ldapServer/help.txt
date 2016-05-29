@@ -1,0 +1,3 @@
+mvn clean install
+mvn clean package
+mvn jetty:run -Dorg.eclipse.jetty.annotations.maxWait=180
