@@ -1,0 +1,48 @@
+2016-05-29_23:41:23.146 [main] INFO  o.h.annotations.common.Version [JavaReflectionManager.java:66]- HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2016-05-29_23:41:23.161 [main] INFO  org.hibernate.Version [Version.java:54]- HHH000412: Hibernate Core {4.3.5.Final}
+2016-05-29_23:41:23.167 [main] INFO  org.hibernate.cfg.Environment [Environment.java:239]- HHH000206: hibernate.properties not found
+2016-05-29_23:41:23.169 [main] INFO  org.hibernate.cfg.Environment [Environment.java:346]- HHH000021: Bytecode provider name : javassist
+2016-05-29_23:41:24.103 [main] INFO  org.hibernate.dialect.Dialect [Dialect.java:145]- HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-05-29_23:41:24.557 [main] INFO  o.h.e.t.i.TransactionFactoryInitiator [TransactionFactoryInitiator.java:62]- HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-05-29_23:41:24.565 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory [ASTQueryTranslatorFactory.java:47]- HHH000397: Using ASTQueryTranslatorFactory
+2016-05-29_23:41:25.036 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:182]- HHH000228: Running hbm2ddl schema update
+2016-05-29_23:41:25.037 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:193]- HHH000102: Fetching database metadata
+2016-05-29_23:41:25.136 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:205]- HHH000396: Updating schema
+2016-05-29_23:41:25.142 [main] INFO  java.sql.DatabaseMetaData [DatabaseMetadata.java:147]- HHH000262: Table not found: roles
+2016-05-29_23:41:25.146 [main] INFO  java.sql.DatabaseMetaData [DatabaseMetadata.java:147]- HHH000262: Table not found: user_roles
+2016-05-29_23:41:25.148 [main] INFO  java.sql.DatabaseMetaData [DatabaseMetadata.java:147]- HHH000262: Table not found: users
+2016-05-29_23:41:25.150 [main] INFO  java.sql.DatabaseMetaData [DatabaseMetadata.java:147]- HHH000262: Table not found: roles
+2016-05-29_23:41:25.152 [main] INFO  java.sql.DatabaseMetaData [DatabaseMetadata.java:147]- HHH000262: Table not found: user_roles
+2016-05-29_23:41:25.155 [main] INFO  java.sql.DatabaseMetaData [DatabaseMetadata.java:147]- HHH000262: Table not found: users
+2016-05-29_23:41:25.157 [main] INFO  java.sql.DatabaseMetaData [DatabaseMetadata.java:147]- HHH000262: Table not found: roles
+2016-05-29_23:41:25.160 [main] INFO  java.sql.DatabaseMetaData [DatabaseMetadata.java:147]- HHH000262: Table not found: user_roles
+2016-05-29_23:41:25.162 [main] INFO  java.sql.DatabaseMetaData [DatabaseMetadata.java:147]- HHH000262: Table not found: users
+2016-05-29_23:41:30.491 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:242]- HHH000232: Schema update complete
+2016-05-29_23:42:00.426 [qtp1933600-16] INFO  c.a.s.r.s.RestUsernamePasswordAuthenticationFilter [RestUsernamePasswordAuthenticationFilter.java:67]- ==failed login==
+2016-05-29_23:42:16.759 [qtp1933600-18] INFO  c.a.s.r.s.RestUsernamePasswordAuthenticationFilter [RestUsernamePasswordAuthenticationFilter.java:59]- ==successful login==
+2016-05-29_23:59:26.773 [main] INFO  o.h.annotations.common.Version [JavaReflectionManager.java:66]- HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2016-05-29_23:59:26.790 [main] INFO  org.hibernate.Version [Version.java:54]- HHH000412: Hibernate Core {4.3.5.Final}
+2016-05-29_23:59:26.795 [main] INFO  org.hibernate.cfg.Environment [Environment.java:239]- HHH000206: hibernate.properties not found
+2016-05-29_23:59:26.798 [main] INFO  org.hibernate.cfg.Environment [Environment.java:346]- HHH000021: Bytecode provider name : javassist
+2016-05-29_23:59:27.515 [main] INFO  org.hibernate.dialect.Dialect [Dialect.java:145]- HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-05-29_23:59:28.044 [main] INFO  o.h.e.t.i.TransactionFactoryInitiator [TransactionFactoryInitiator.java:62]- HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-05-29_23:59:28.053 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory [ASTQueryTranslatorFactory.java:47]- HHH000397: Using ASTQueryTranslatorFactory
+2016-05-29_23:59:28.648 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:182]- HHH000228: Running hbm2ddl schema update
+2016-05-29_23:59:28.650 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:193]- HHH000102: Fetching database metadata
+2016-05-29_23:59:28.710 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:205]- HHH000396: Updating schema
+2016-05-29_23:59:28.719 [main] INFO  java.sql.DatabaseMetaData [DatabaseMetadata.java:147]- HHH000262: Table not found: roles
+2016-05-29_23:59:28.722 [main] INFO  java.sql.DatabaseMetaData [DatabaseMetadata.java:147]- HHH000262: Table not found: user_roles
+2016-05-29_23:59:28.725 [main] INFO  java.sql.DatabaseMetaData [DatabaseMetadata.java:147]- HHH000262: Table not found: users
+2016-05-29_23:59:28.728 [main] INFO  java.sql.DatabaseMetaData [DatabaseMetadata.java:147]- HHH000262: Table not found: roles
+2016-05-29_23:59:28.731 [main] INFO  java.sql.DatabaseMetaData [DatabaseMetadata.java:147]- HHH000262: Table not found: user_roles
+2016-05-29_23:59:28.737 [main] INFO  java.sql.DatabaseMetaData [DatabaseMetadata.java:147]- HHH000262: Table not found: users
+2016-05-29_23:59:28.741 [main] INFO  java.sql.DatabaseMetaData [DatabaseMetadata.java:147]- HHH000262: Table not found: roles
+2016-05-29_23:59:28.743 [main] INFO  java.sql.DatabaseMetaData [DatabaseMetadata.java:147]- HHH000262: Table not found: user_roles
+2016-05-29_23:59:28.746 [main] INFO  java.sql.DatabaseMetaData [DatabaseMetadata.java:147]- HHH000262: Table not found: users
+2016-05-29_23:59:34.456 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:242]- HHH000232: Schema update complete
+2016-05-30_00:00:26.343 [qtp1933600-17] INFO  c.a.s.r.s.RestUsernamePasswordAuthenticationFilter [RestUsernamePasswordAuthenticationFilter.java:67]- ==failed login==
+2016-05-30_00:00:42.104 [qtp1933600-13] INFO  c.a.s.r.s.RestUsernamePasswordAuthenticationFilter [RestUsernamePasswordAuthenticationFilter.java:67]- ==failed login==
+2016-05-30_00:00:54.384 [qtp1933600-16] INFO  c.a.s.r.s.RestUsernamePasswordAuthenticationFilter [RestUsernamePasswordAuthenticationFilter.java:67]- ==failed login==
+2016-05-30_00:01:08.354 [qtp1933600-17] INFO  c.a.s.r.s.RestUsernamePasswordAuthenticationFilter [RestUsernamePasswordAuthenticationFilter.java:67]- ==failed login==
+2016-05-30_00:01:50.488 [qtp1933600-16] INFO  c.a.s.r.s.RestUsernamePasswordAuthenticationFilter [RestUsernamePasswordAuthenticationFilter.java:59]- ==successful login==
+2016-05-30_00:02:58.229 [qtp1933600-18] INFO  c.a.s.r.s.RestUsernamePasswordAuthenticationFilter [RestUsernamePasswordAuthenticationFilter.java:67]- ==failed login==
