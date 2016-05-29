@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+        * @author Adarsh Kumar
+        * @author $LastChangedBy: Adarsh Kumar$
+        * @version $Revision: 0001 $, $Date:: 1/1/10 0:00 AM#$
+        * @Espark @copyright all right reserve
+-->
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:security="http://www.springframework.org/schema/security"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                                  http://www.springframework.org/schema/beans/spring-beans.xsd
+                                  http://www.springframework.org/schema/security
+                                  http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <security:global-method-security pre-post-annotations="enabled" />
+    <security:http pattern="/index.jsp" security="none"/>
+    <security:http pattern="/js/**" security="none"/>
+    <security:http pattern="/css/**" security="none"/>
+    <security:http pattern="/images/**" security="none"/>
+    <security:http pattern="/favicon.ico" security="none"/>
+
+    <security:http auto-config="true" create-session="always"  request-matcher="regex" disable-url-rewriting="false">
+        <security:http-basic />
+        <security:headers disabled="true"/>
+        <security:csrf disabled="true"/>
+        <security:intercept-url pattern="/login.do*" access="permitAll"/>
+        <security:intercept-url pattern="/home.do*" access="hasAnyRole('ROLE_USER','ROLE_ADMIN','ROLE_SUPERADMIN')"/>
+        <security:intercept-url pattern="/user/home.do*" access="hasAnyRole('ROLE_USER','ROLE_ADMIN','ROLE_SUPERADMIN')"/>
+        <security:intercept-url pattern="/admin/home.do*" access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERADMIN')"/>
+        <security:intercept-url pattern="/superadmin/home.do*" access="hasRole('ROLE_SUPERADMIN')"/>
+
+        <security:form-login login-page="/login.do"
+                             username-parameter="j_username"
+                             password-parameter="j_password"
+                             login-processing-url="/j_spring_security_check"
+                             default-target-url="/home.do"
+                             authentication-failure-url="/loginFailed.do?login_error=true"/>
+        <security:access-denied-handler error-page="/access.do"/>
+        <security:logout logout-url="/logout.do"/>
+        <security:session-management invalid-session-url="/login.do"/>
+    </security:http>
+
+
+    <!--
+            For authentication:
+            user-search-filter: the attribute name that contains the user name
+            user-search-base: the base path where to find user information
+
+            For authorization:
+            group-search-filter: the attribute name that contains the full dn of a user
+            group-search-base: the base path where to find role information
+            group-role-attribute: the attribute name that contains the role type
+            role-prefix: the prefix to be added when retrieving role values
+
+            For server access:
+            manager-dn: the full dn of the person that has access to an LDAP server
+            manager-password: the password of the person that has access to an LDAP server
+    -->
+
+    <security:authentication-manager>
+        <security:ldap-authentication-provider
+                user-search-filter="(uid={0})"
+                user-search-base="ou=people"
+                group-search-filter="(uniqueMember={0})"
+                group-search-base="ou=users,ou=groups"
+                user-dn-pattern="uid={0},ou=people"
+                role-prefix="ROLE_">
+        </security:ldap-authentication-provider>
+    </security:authentication-manager>
+
+    <security:ldap-server url="${espark.ldap.url}"
+                          manager-dn="uid=admin,ou=system"
+                          manager-password="secret"/>
+</beans:beans>
