@@ -1,0 +1,183 @@
+2016-06-05_17:11:21.576 [main] INFO  o.h.annotations.common.Version [JavaReflectionManager.java:66]- HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2016-06-05_17:11:21.593 [main] INFO  org.hibernate.Version [Version.java:54]- HHH000412: Hibernate Core {4.3.5.Final}
+2016-06-05_17:11:21.598 [main] INFO  org.hibernate.cfg.Environment [Environment.java:239]- HHH000206: hibernate.properties not found
+2016-06-05_17:11:21.601 [main] INFO  org.hibernate.cfg.Environment [Environment.java:346]- HHH000021: Bytecode provider name : javassist
+2016-06-05_17:11:22.223 [main] INFO  org.hibernate.dialect.Dialect [Dialect.java:145]- HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-06-05_17:11:22.624 [main] INFO  o.h.e.t.i.TransactionFactoryInitiator [TransactionFactoryInitiator.java:62]- HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-06-05_17:11:22.632 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory [ASTQueryTranslatorFactory.java:47]- HHH000397: Using ASTQueryTranslatorFactory
+2016-06-05_17:11:23.038 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:182]- HHH000228: Running hbm2ddl schema update
+2016-06-05_17:11:23.039 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:193]- HHH000102: Fetching database metadata
+2016-06-05_17:11:23.059 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:205]- HHH000396: Updating schema
+2016-06-05_17:11:23.141 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:66]- HHH000261: Table found: espark.roles
+2016-06-05_17:11:23.143 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:67]- HHH000037: Columns: [role, id]
+2016-06-05_17:11:23.145 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:69]- HHH000108: Foreign keys: []
+2016-06-05_17:11:23.146 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:70]- HHH000126: Indexes: [primary]
+2016-06-05_17:11:23.165 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:66]- HHH000261: Table found: espark.user_roles
+2016-06-05_17:11:23.167 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:67]- HHH000037: Columns: [user_id, role_id]
+2016-06-05_17:11:23.168 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:69]- HHH000108: Foreign keys: []
+2016-06-05_17:11:23.168 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:70]- HHH000126: Indexes: [role, user]
+2016-06-05_17:11:23.188 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:66]- HHH000261: Table found: espark.users
+2016-06-05_17:11:23.188 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:67]- HHH000037: Columns: [password, id, login]
+2016-06-05_17:11:23.189 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:69]- HHH000108: Foreign keys: []
+2016-06-05_17:11:23.189 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:70]- HHH000126: Indexes: [primary]
+2016-06-05_17:11:26.815 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:242]- HHH000232: Schema update complete
+2016-06-05_17:14:50.466 [qtp17562404-16] DEBUG c.a.s.r.s.AuthenticationTokenProcessingFilter [AuthenticationTokenProcessingFilter.java:81]- Checking headers and parameters for authentication token...
+2016-06-05_17:14:50.884 [qtp17562404-16] DEBUG c.a.s.r.r.RestAuthenticationController [RestAuthenticationController.java:93]- Inside-AuthenticationController.java
+2016-06-05_17:15:51.570 [qtp17562404-16] DEBUG c.a.s.r.s.AuthenticationTokenProcessingFilter [AuthenticationTokenProcessingFilter.java:81]- Checking headers and parameters for authentication token...
+2016-06-05_17:15:51.575 [qtp17562404-16] DEBUG c.a.s.r.s.AuthenticationTokenProcessingFilter [AuthenticationTokenProcessingFilter.java:88]- Found token 'YWRhcnNoISEhMTQ2NTIxMzQ5MTUyMCEhIcgmJP10mlotfCIOycDPuhQ=' in request headers
+2016-06-05_17:15:51.729 [qtp17562404-16] DEBUG c.a.s.r.s.AuthenticationTokenProcessingFilter [AuthenticationTokenProcessingFilter.java:94]- Inside-AuthenticationTokenProcessingFilter.java
+2016-06-05_17:15:51.770 [qtp17562404-16] ERROR o.j.resteasy.core.ExceptionHandler [Slf4jLogger.java:143]- failed to execute
+javax.ws.rs.NotAcceptableException: No match for accept header
+	at org.jboss.resteasy.core.registry.SegmentNode.match(SegmentNode.java:382) ~[resteasy-jaxrs-3.0.11.Final.jar:na]
+	at org.jboss.resteasy.core.registry.SegmentNode.match(SegmentNode.java:114) ~[resteasy-jaxrs-3.0.11.Final.jar:na]
+	at org.jboss.resteasy.core.registry.RootNode.match(RootNode.java:43) ~[resteasy-jaxrs-3.0.11.Final.jar:na]
+	at org.jboss.resteasy.core.registry.RootClassNode.match(RootClassNode.java:48) ~[resteasy-jaxrs-3.0.11.Final.jar:na]
+	at org.jboss.resteasy.core.ResourceMethodRegistry.getResourceInvoker(ResourceMethodRegistry.java:444) ~[resteasy-jaxrs-3.0.11.Final.jar:na]
+	at org.jboss.resteasy.core.SynchronousDispatcher.getInvoker(SynchronousDispatcher.java:234) ~[resteasy-jaxrs-3.0.11.Final.jar:na]
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:171) ~[resteasy-jaxrs-3.0.11.Final.jar:na]
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:220) [resteasy-jaxrs-3.0.11.Final.jar:na]
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:56) [resteasy-jaxrs-3.0.11.Final.jar:na]
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:51) [resteasy-jaxrs-3.0.11.Final.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790) [javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:808) [jetty-servlet-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669) [jetty-servlet-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:316) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:168) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at com.adarsh.spring.resteasy.security.AuthenticationTokenProcessingFilter.doFilter(AuthenticationTokenProcessingFilter.java:98) [classes/:na]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:120) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:53) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:91) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:213) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:176) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:344) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:261) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652) [jetty-servlet-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585) [jetty-servlet-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577) [jetty-security-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515) [jetty-servlet-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.Server.handle(Server.java:499) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540) [jetty-io-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_25]
+2016-06-05_17:16:06.459 [qtp17562404-14] DEBUG c.a.s.r.s.AuthenticationTokenProcessingFilter [AuthenticationTokenProcessingFilter.java:81]- Checking headers and parameters for authentication token...
+2016-06-05_17:16:06.462 [qtp17562404-14] DEBUG c.a.s.r.s.AuthenticationTokenProcessingFilter [AuthenticationTokenProcessingFilter.java:88]- Found token 'YWRhcnNoISEhMTQ2NTIxMzQ5MTUyMCEhIcgmJP10mlotfCIOycDPuhQ=' in request headers
+2016-06-05_17:16:06.582 [qtp17562404-14] DEBUG c.a.s.r.s.AuthenticationTokenProcessingFilter [AuthenticationTokenProcessingFilter.java:94]- Inside-AuthenticationTokenProcessingFilter.java
+2016-06-05_17:16:26.783 [qtp17562404-11] DEBUG c.a.s.r.s.AuthenticationTokenProcessingFilter [AuthenticationTokenProcessingFilter.java:81]- Checking headers and parameters for authentication token...
+2016-06-05_17:16:26.783 [qtp17562404-11] DEBUG c.a.s.r.s.AuthenticationTokenProcessingFilter [AuthenticationTokenProcessingFilter.java:88]- Found token 'YWRhcnNoISEhMTQ2NTIxMzQ5MTUyMCEhIcgmJP10mlotfCIOycDPuhQ=' in request headers
+2016-06-05_17:16:26.933 [qtp17562404-11] DEBUG c.a.s.r.s.AuthenticationTokenProcessingFilter [AuthenticationTokenProcessingFilter.java:94]- Inside-AuthenticationTokenProcessingFilter.java
+2016-06-05_17:16:26.949 [qtp17562404-11] ERROR o.j.resteasy.core.ExceptionHandler [Slf4jLogger.java:143]- failed to execute
+javax.ws.rs.NotFoundException: Could not find resource for full path: http://localhost:8080/SpringSecurityRestEasyTokenAuthentication/rest/users/logout
+	at org.jboss.resteasy.core.registry.SegmentNode.match(SegmentNode.java:112) ~[resteasy-jaxrs-3.0.11.Final.jar:na]
+	at org.jboss.resteasy.core.registry.RootNode.match(RootNode.java:43) ~[resteasy-jaxrs-3.0.11.Final.jar:na]
+	at org.jboss.resteasy.core.registry.RootClassNode.match(RootClassNode.java:48) ~[resteasy-jaxrs-3.0.11.Final.jar:na]
+	at org.jboss.resteasy.core.ResourceMethodRegistry.getResourceInvoker(ResourceMethodRegistry.java:444) ~[resteasy-jaxrs-3.0.11.Final.jar:na]
+	at org.jboss.resteasy.core.SynchronousDispatcher.getInvoker(SynchronousDispatcher.java:234) ~[resteasy-jaxrs-3.0.11.Final.jar:na]
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:171) ~[resteasy-jaxrs-3.0.11.Final.jar:na]
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:220) [resteasy-jaxrs-3.0.11.Final.jar:na]
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:56) [resteasy-jaxrs-3.0.11.Final.jar:na]
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:51) [resteasy-jaxrs-3.0.11.Final.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790) [javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:808) [jetty-servlet-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669) [jetty-servlet-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:316) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:168) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at com.adarsh.spring.resteasy.security.AuthenticationTokenProcessingFilter.doFilter(AuthenticationTokenProcessingFilter.java:98) [classes/:na]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:120) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:53) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:91) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:213) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:176) [spring-security-web-4.0.1.RELEASE.jar:4.0.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:344) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:261) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652) [jetty-servlet-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585) [jetty-servlet-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577) [jetty-security-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515) [jetty-servlet-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.Server.handle(Server.java:499) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257) [jetty-server-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540) [jetty-io-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555) [jetty-util-9.2.11.v20150529.jar:9.2.11.v20150529]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_25]
+2016-06-05_17:46:23.107 [main] INFO  o.h.annotations.common.Version [JavaReflectionManager.java:66]- HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2016-06-05_17:46:23.131 [main] INFO  org.hibernate.Version [Version.java:54]- HHH000412: Hibernate Core {4.3.5.Final}
+2016-06-05_17:46:23.136 [main] INFO  org.hibernate.cfg.Environment [Environment.java:239]- HHH000206: hibernate.properties not found
+2016-06-05_17:46:23.139 [main] INFO  org.hibernate.cfg.Environment [Environment.java:346]- HHH000021: Bytecode provider name : javassist
+2016-06-05_17:46:23.859 [main] INFO  org.hibernate.dialect.Dialect [Dialect.java:145]- HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-06-05_17:46:24.441 [main] INFO  o.h.e.t.i.TransactionFactoryInitiator [TransactionFactoryInitiator.java:62]- HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-06-05_17:46:24.449 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory [ASTQueryTranslatorFactory.java:47]- HHH000397: Using ASTQueryTranslatorFactory
+2016-06-05_17:46:25.020 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:182]- HHH000228: Running hbm2ddl schema update
+2016-06-05_17:46:25.021 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:193]- HHH000102: Fetching database metadata
+2016-06-05_17:46:25.057 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:205]- HHH000396: Updating schema
+2016-06-05_17:46:25.100 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:66]- HHH000261: Table found: espark.roles
+2016-06-05_17:46:25.101 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:67]- HHH000037: Columns: [role, id]
+2016-06-05_17:46:25.101 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:69]- HHH000108: Foreign keys: []
+2016-06-05_17:46:25.102 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:70]- HHH000126: Indexes: [primary]
+2016-06-05_17:46:25.117 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:66]- HHH000261: Table found: espark.user_roles
+2016-06-05_17:46:25.119 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:67]- HHH000037: Columns: [user_id, role_id]
+2016-06-05_17:46:25.122 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:69]- HHH000108: Foreign keys: []
+2016-06-05_17:46:25.122 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:70]- HHH000126: Indexes: [role, user]
+2016-06-05_17:46:25.157 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:66]- HHH000261: Table found: espark.users
+2016-06-05_17:46:25.160 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:67]- HHH000037: Columns: [password, id, login]
+2016-06-05_17:46:25.162 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:69]- HHH000108: Foreign keys: []
+2016-06-05_17:46:25.163 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:70]- HHH000126: Indexes: [primary]
+2016-06-05_17:46:29.663 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:242]- HHH000232: Schema update complete
+2016-06-05_17:47:31.376 [qtp6921978-12] DEBUG c.a.s.r.s.AuthenticationTokenProcessingFilter [AuthenticationTokenProcessingFilter.java:81]- Checking headers and parameters for authentication token...
+2016-06-05_17:47:31.851 [qtp6921978-12] DEBUG c.a.s.r.r.RestAuthenticationController [RestAuthenticationController.java:93]- Inside-AuthenticationController.java
+2016-06-05_17:48:16.883 [qtp6921978-17] DEBUG c.a.s.r.s.AuthenticationTokenProcessingFilter [AuthenticationTokenProcessingFilter.java:81]- Checking headers and parameters for authentication token...
+2016-06-05_17:48:16.886 [qtp6921978-17] DEBUG c.a.s.r.s.AuthenticationTokenProcessingFilter [AuthenticationTokenProcessingFilter.java:88]- Found token 'YWRhcnNoISEhMTQ2NTIxNTQ1MjU3OSEhIfKz/Jjz2NPnPrRAihDRPz8=' in request headers
+2016-06-05_17:48:17.160 [qtp6921978-17] DEBUG c.a.s.r.s.AuthenticationTokenProcessingFilter [AuthenticationTokenProcessingFilter.java:94]- Inside-AuthenticationTokenProcessingFilter.java
