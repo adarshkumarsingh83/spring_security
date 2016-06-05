@@ -1,0 +1,11 @@
+LOGIN URL
+URL=http://localhost:8080/SpringSecurityWebMvcRestExample/rest/login?j_username=adarsh&j_password=adarsh
+Content-Type = application/x-www-form-urlencoded
+
+SERVICE URL
+URL=http://localhost:8080/SpringSecurityWebMvcRestExample/rest/users
+EX=> http://localhost:8080/SpringSecurityWebMvcRestExample/rest/users?JSESSIONID=<JSESSIONID>
+
+LOGOUT URL
+URL=http://localhost:8080/SpringSecurityWebMvcRestExample/rest/logout
+EX=> http://localhost:8080/SpringSecurityWebMvcRestExample/rest/logout?JSESSIONID=<JSESSIONID>
