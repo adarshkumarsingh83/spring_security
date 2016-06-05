@@ -1,0 +1,56 @@
+2016-06-05_17:52:43.737 [main] INFO  o.h.annotations.common.Version [JavaReflectionManager.java:66]- HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2016-06-05_17:52:43.762 [main] INFO  org.hibernate.Version [Version.java:54]- HHH000412: Hibernate Core {4.3.5.Final}
+2016-06-05_17:52:43.768 [main] INFO  org.hibernate.cfg.Environment [Environment.java:239]- HHH000206: hibernate.properties not found
+2016-06-05_17:52:43.771 [main] INFO  org.hibernate.cfg.Environment [Environment.java:346]- HHH000021: Bytecode provider name : javassist
+2016-06-05_17:52:44.418 [main] INFO  org.hibernate.dialect.Dialect [Dialect.java:145]- HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-06-05_17:52:44.770 [main] INFO  o.h.e.t.i.TransactionFactoryInitiator [TransactionFactoryInitiator.java:62]- HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-06-05_17:52:44.779 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory [ASTQueryTranslatorFactory.java:47]- HHH000397: Using ASTQueryTranslatorFactory
+2016-06-05_17:52:45.277 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:182]- HHH000228: Running hbm2ddl schema update
+2016-06-05_17:52:45.278 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:193]- HHH000102: Fetching database metadata
+2016-06-05_17:52:45.375 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:205]- HHH000396: Updating schema
+2016-06-05_17:52:45.414 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:66]- HHH000261: Table found: espark.roles
+2016-06-05_17:52:45.415 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:67]- HHH000037: Columns: [role, id]
+2016-06-05_17:52:45.416 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:69]- HHH000108: Foreign keys: []
+2016-06-05_17:52:45.417 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:70]- HHH000126: Indexes: [primary]
+2016-06-05_17:52:45.437 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:66]- HHH000261: Table found: espark.user_roles
+2016-06-05_17:52:45.454 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:67]- HHH000037: Columns: [user_id, role_id]
+2016-06-05_17:52:45.456 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:69]- HHH000108: Foreign keys: []
+2016-06-05_17:52:45.457 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:70]- HHH000126: Indexes: [role, user]
+2016-06-05_17:52:45.482 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:66]- HHH000261: Table found: espark.users
+2016-06-05_17:52:45.484 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:67]- HHH000037: Columns: [password, id, login]
+2016-06-05_17:52:45.485 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:69]- HHH000108: Foreign keys: []
+2016-06-05_17:52:45.486 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:70]- HHH000126: Indexes: [primary]
+2016-06-05_17:52:49.617 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:242]- HHH000232: Schema update complete
+2016-06-05_17:54:50.589 [qtp31463427-13] DEBUG c.a.s.s.AuthenticationTokenProcessingFilter [AuthenticationTokenProcessingFilter.java:81]- Checking headers and parameters for authentication token...
+2016-06-05_17:54:50.894 [qtp31463427-13] DEBUG c.a.s.c.RestAuthenticationController [RestAuthenticationController.java:100]- Inside-AuthenticationController.java
+2016-06-05_17:55:30.048 [qtp31463427-18] DEBUG c.a.s.s.AuthenticationTokenProcessingFilter [AuthenticationTokenProcessingFilter.java:81]- Checking headers and parameters for authentication token...
+2016-06-05_17:55:30.107 [qtp31463427-18] DEBUG c.a.s.s.AuthenticationTokenProcessingFilter [AuthenticationTokenProcessingFilter.java:88]- Found token 'YWRhcnNoISEhMTQ2NTIxNTg5MTQzNiEhIagRf2lKQHV8EOCZPTCcRag=' in request headers
+2016-06-05_17:55:30.254 [qtp31463427-18] DEBUG c.a.s.s.AuthenticationTokenProcessingFilter [AuthenticationTokenProcessingFilter.java:94]- Inside-AuthenticationTokenProcessingFilter.java
+2016-06-05_18:28:10.017 [main] INFO  o.h.annotations.common.Version [JavaReflectionManager.java:66]- HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2016-06-05_18:28:10.049 [main] INFO  org.hibernate.Version [Version.java:54]- HHH000412: Hibernate Core {4.3.5.Final}
+2016-06-05_18:28:10.057 [main] INFO  org.hibernate.cfg.Environment [Environment.java:239]- HHH000206: hibernate.properties not found
+2016-06-05_18:28:10.061 [main] INFO  org.hibernate.cfg.Environment [Environment.java:346]- HHH000021: Bytecode provider name : javassist
+2016-06-05_18:28:10.876 [main] INFO  org.hibernate.dialect.Dialect [Dialect.java:145]- HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-06-05_18:28:11.302 [main] INFO  o.h.e.t.i.TransactionFactoryInitiator [TransactionFactoryInitiator.java:62]- HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-06-05_18:28:11.314 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory [ASTQueryTranslatorFactory.java:47]- HHH000397: Using ASTQueryTranslatorFactory
+2016-06-05_18:28:11.854 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:182]- HHH000228: Running hbm2ddl schema update
+2016-06-05_18:28:11.855 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:193]- HHH000102: Fetching database metadata
+2016-06-05_18:28:11.907 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:205]- HHH000396: Updating schema
+2016-06-05_18:28:11.982 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:66]- HHH000261: Table found: espark.roles
+2016-06-05_18:28:11.984 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:67]- HHH000037: Columns: [role, id]
+2016-06-05_18:28:11.985 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:69]- HHH000108: Foreign keys: []
+2016-06-05_18:28:11.986 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:70]- HHH000126: Indexes: [primary]
+2016-06-05_18:28:12.002 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:66]- HHH000261: Table found: espark.user_roles
+2016-06-05_18:28:12.004 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:67]- HHH000037: Columns: [user_id, role_id]
+2016-06-05_18:28:12.005 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:69]- HHH000108: Foreign keys: []
+2016-06-05_18:28:12.006 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:70]- HHH000126: Indexes: [role, user]
+2016-06-05_18:28:12.058 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:66]- HHH000261: Table found: espark.users
+2016-06-05_18:28:12.064 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:67]- HHH000037: Columns: [password, id, login]
+2016-06-05_18:28:12.065 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:69]- HHH000108: Foreign keys: []
+2016-06-05_18:28:12.066 [main] INFO  o.h.tool.hbm2ddl.TableMetadata [TableMetadata.java:70]- HHH000126: Indexes: [primary]
+2016-06-05_18:28:16.912 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate [SchemaUpdate.java:242]- HHH000232: Schema update complete
+2016-06-05_18:29:34.875 [qtp31463427-15] DEBUG c.a.s.s.AuthenticationTokenProcessingFilter [AuthenticationTokenProcessingFilter.java:81]- Checking headers and parameters for authentication token...
+2016-06-05_18:29:35.274 [qtp31463427-15] DEBUG c.a.s.c.RestAuthenticationController [RestAuthenticationController.java:100]- Inside-AuthenticationController.java
+2016-06-05_18:30:17.607 [qtp31463427-18] DEBUG c.a.s.s.AuthenticationTokenProcessingFilter [AuthenticationTokenProcessingFilter.java:81]- Checking headers and parameters for authentication token...
+2016-06-05_18:30:17.609 [qtp31463427-18] DEBUG c.a.s.s.AuthenticationTokenProcessingFilter [AuthenticationTokenProcessingFilter.java:88]- Found token 'YWRhcnNoISEhMTQ2NTIxNzk3NTk0MCEhIT+HtRZpXUcUBAEgRdg1nHs=' in request headers
+2016-06-05_18:30:18.065 [qtp31463427-18] DEBUG c.a.s.s.AuthenticationTokenProcessingFilter [AuthenticationTokenProcessingFilter.java:94]- Inside-AuthenticationTokenProcessingFilter.java
