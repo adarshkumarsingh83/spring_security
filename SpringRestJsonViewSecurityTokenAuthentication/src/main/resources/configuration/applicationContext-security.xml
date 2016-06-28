@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+        * @author Adarsh Kumar
+        * @author $LastChangedBy: Adarsh Kumar$
+        * @version $Revision: 0001 $, $Date:: 1/1/10 0:00 AM#$
+        * @Espark @copyright all right reserve
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       default-init-method="init" default-destroy-method="destroy"
+       xsi:schemaLocation="http://www.springframework.org/schema/security
+                            http://www.springframework.org/schema/security/spring-security.xsd
+                            http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+    <security:global-method-security
+            secured-annotations="enabled"
+            jsr250-annotations="enabled"
+            pre-post-annotations="enabled"
+            access-decision-manager-ref="accessDecisionManager">
+    </security:global-method-security>
+
+    <!-- Disable security on static resources -->
+    <security:http request-matcher="regex" pattern="/index.jsp" security="none"/>
+    <security:http request-matcher="regex" pattern="/*.ico" security="none"/>
+    <security:http request-matcher="regex" pattern="/css/*.css" security="none"/>
+    <security:http request-matcher="regex" pattern="/js/*.js" security="none"/>
+    <security:http request-matcher="regex" pattern="/images/*" security="none"/>
+
+    <!-- Security configuration for REST services. -->
+    <security:http realm="Api Server"
+                   pattern="/rest/**"
+                   entry-point-ref="apiServerAuthenticationEntryPoint"
+                   use-expressions="true"
+                   auto-config="false"
+                   create-session="stateless">
+        <security:csrf disabled="true"/>
+
+        <!-- Adds the custom login filter to Spring Security filter chain -->
+        <security:custom-filter ref="authenticationTokenProcessingFilter"
+                                position="FORM_LOGIN_FILTER"/>
+
+        <!-- Configures the security rules of our REST API -->
+        <security:intercept-url pattern="/rest/authenticate/login" access="permitAll()"/>
+        <security:intercept-url pattern="/rest/**" access="hasAnyRole('ROLE_SUPERADMIN','ROLE_ADMIN','ROLE_USER')"/>
+
+
+        <!-- Adds a logout filter to Spring Security filter chain -->
+        <security:logout logout-url="/rest/logout"
+                         delete-cookies="true"
+                         invalidate-session="true"
+                         success-handler-ref="restLogoutSuccessHandler"/>
+
+        <security:access-denied-handler ref="accessDeniedHandler"/>
+    </security:http>
+
+    <bean id="authenticationTokenProcessingFilter"
+          class="com.espark.adarsh.spring.web.security.AuthenticationTokenProcessingFilter">
+        <constructor-arg ref="authenticationManager"/>
+    </bean>
+
+    <bean id="accessDeniedHandler" class="com.espark.adarsh.spring.web.security.AccessDeniedHandler"/>
+
+    <!-- Configures a custom authentication success handler that returns HTTP status code 200 -->
+    <bean id="restAuthenticationSuccessHandler"
+          class="com.espark.adarsh.spring.web.security.RestAuthenticationSuccessHandler">
+        <property name="alwaysUseDefaultTargetUrl" value="true"/>
+        <property name="defaultTargetUrl" value="/rest/login"/>
+    </bean>
+
+    <!-- Configures a custom authentication failure handler that returns HTTP status code 401 -->
+    <bean id="restAuthenticationFailureHandler"
+          class="com.espark.adarsh.spring.web.security.RestAuthenticationFailureHandler"/>
+
+    <!-- Configures a custom logout success handler that returns HTTP status code 200 -->
+    <bean id="restLogoutSuccessHandler"
+          class="com.espark.adarsh.spring.web.security.RestLogoutSuccessHandler"/>
+
+    <bean id="accessDecisionManager" class="org.springframework.security.access.vote.AffirmativeBased">
+        <constructor-arg name="decisionVoters">
+            <list>
+                <bean class="org.springframework.security.access.vote.RoleVoter">
+                    <property name="rolePrefix" value=""/>
+                </bean>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="exceptionTranslationFilter" class="org.springframework.security.web.access.ExceptionTranslationFilter">
+        <constructor-arg name="authenticationEntryPoint" ref="apiServerAuthenticationEntryPoint"/>
+    </bean>
+
+      <bean id="authenticationManager" class="org.springframework.security.authentication.ProviderManager">
+          <constructor-arg name="providers">
+              <list>
+                  <ref bean="daoAuthenticationProvider"/>
+                  <ref bean="restApiAuthProvider"/>
+              </list>
+          </constructor-arg>
+      </bean>
+
+      <alias name="authenticationManager" alias="org.springframework.security.authenticationManager"/>
+
+      <bean id="daoAuthenticationProvider"
+            class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+          <property name="userDetailsService" ref="userDetailsServiceImpl"/>
+          <property name="passwordEncoder" ref="md5PasswordEncoder"/>
+      </bean>
+      <bean id="md5PasswordEncoder" class="org.springframework.security.authentication.encoding.Md5PasswordEncoder"/>
+</beans>
