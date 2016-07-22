@@ -1,0 +1,36 @@
+mvn clean install
+mvn jetty:run
+
+http://localhost:8080/SpringSecurityWebMvcRestTokenAuthenticationXmlExample
+
+------------------------------------------------------------------------------
+Login Call
+------------------------------------------------------------------------------
+URL=http://localhost:8080/SpringSecurityWebMvcRestTokenAuthenticationXmlExample/api/login
+
+URL PARAMETER NEED TO SET AS
+Content-Type : application/json
+
+data to set into
+{"username":"adarsh", "password":"adarsh"}
+
+------------------------------------------------------------------------------
+Service Call
+------------------------------------------------------------------------------
+URL=http://localhost:8080/SpringSecurityWebMvcRestTokenAuthenticationXmlExample/api/users
+
+URL PARAMETER NEED TO SET AS
+Content-Type : application/json
+
+Authentication-token : <TOKEN-VALUE>
+
+------------------------------------------------------------------------------
+Logout Call
+------------------------------------------------------------------------------
+URL=http://localhost:8080/SpringSecurityWebMvcRestTokenAuthenticationXmlExample/api/logout
+
+URL PARAMETER NEED TO SET AS
+Content-Type : application/json
+
+Authentication-token : <TOKEN-VALUE>
+------------------------------------------------------------------------------
