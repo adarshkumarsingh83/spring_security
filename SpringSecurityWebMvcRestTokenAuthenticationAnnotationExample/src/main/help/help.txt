@@ -1,0 +1,96 @@
+mvn clean install
+
+mvn jetty:run
+
+url=> http://localhost:9090/
+
+url=> http://localhost:8080/SpringSecurityWebMvcRestTokenAuthenticationAnnotationExample/rest/authenticate/login
+
+Content-Type:application/json
+{"username":"adarsh", "password":"adarsh"}
+Response:=>
+{
+  "User-Name": "adarsh",
+  "User-Password": "adarsh",
+  "Authentication-token": "YWRhcnNoISEhMTQ1ODgwNTQyODUxNyEhIUYEkvI7jEpLVfViLgOoX6s=",
+  "Response-Message": "LOGIN SUCCESSFUL",
+  "Response-Status": 200
+}
+
+------------------------------------------------------------------------------------
+url=> http://localhost:8080/SpringSecurityWebMvcRestTokenAuthenticationAnnotationExample/rest/users
+Accept:application/json
+Authentication-token : YWRhcnNoISEhMTQ1ODgwNTQyODUxNyEhIUYEkvI7jEpLVfViLgOoX6s=
+
+{
+    "User-Name": null,
+    "User-Password": null,
+    "Authentication-token": null,
+    "Response-Message": "User Data ",
+    "Response-Status": 200,
+    "data": [
+        {
+            "id": 1,
+            "userName": "adarsh",
+            "userEmail": "adarsh@kumar",
+            "userPwd": "adarsh",
+            "userPhone": "8197416336",
+            "enabled": true,
+            "firstName": "adarsh",
+            "lastName": "kumar",
+            "createdDate": 1420050600000,
+            "modifiedDate": 1420050600000,
+            "userRoles": [
+                {
+                    "id": 1,
+                    "name": "ROLE_SUPERADMIN"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "userName": "admin",
+            "userEmail": "admin@kumar",
+            "userPwd": "admin",
+            "userPhone": "8197416336",
+            "enabled": true,
+            "firstName": "admin",
+            "lastName": "kumar",
+            "createdDate": 1420050600000,
+            "modifiedDate": 1420050600000,
+            "userRoles": [
+                {
+                    "id": 2,
+                    "name": "ROLE_ADMIN"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "userName": "user",
+            "userEmail": "user@kumar",
+            "userPwd": "user",
+            "userPhone": "8197416336",
+            "enabled": true,
+            "firstName": "user",
+            "lastName": "kumar",
+            "createdDate": 1420050600000,
+            "modifiedDate": 1420050600000,
+            "userRoles": [
+                {
+                    "id": 3,
+                    "name": "ROLE_USER"
+                }
+            ]
+        }
+    ]
+}
+
+
+http://localhost:8080/SpringSecurityWebMvcRestTokenAuthenticationAnnotationExample/rest/logout
+Authentication-token : YWRhcnNoISEhMTQ1ODgwNTQyODUxNyEhIUYEkvI7jEpLVfViLgOoX6s=
+
+{
+    "MESSAGE": "LOGOUT-SUCCESS",
+    "HttpStatus": "200"
+}
