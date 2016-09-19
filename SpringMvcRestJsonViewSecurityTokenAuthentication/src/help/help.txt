@@ -1,0 +1,33 @@
+mvn clean package
+mvn jetty:run
+crt+c
+-----------------------------------------------------------------------------------------
+jsp ui login page url
+-----------------------------------------------------------------------------------------
+http://localhost:8080/SpringMvcRestJsonViewSecurityTokenAuthentication/login.do
+-----------------------------------------------------------------------------------------
+
+LOGIN URL
+-----------------------------------------------------------------------------------------
+URL=http://localhost:8080/SpringMvcRestJsonViewSecurityTokenAuthentication/rest/authenticate/login
+
+SET IN THE HEADER PARAM
+Content-Type = application/json
+
+SET AS THE RAW TYPE JSON
+{"username":"adarsh", "password":"adarsh"}
+-----------------------------------------------------------------------------------------
+SERVICE URL
+-----------------------------------------------------------------------------------------
+URL=http://localhost:8080/SpringMvcRestJsonViewSecurityTokenAuthentication/rest/employee/detail/all
+SET IN THE HEADER PARAM
+Content-Type = application/json
+Authentication-token = <TOKEN VALUE>
+
+-----------------------------------------------------------------------------------------
+LOGOUT URL
+-----------------------------------------------------------------------------------------
+URL=http://localhost:8080/SpringMvcRestJsonViewSecurityTokenAuthentication/rest/logout
+SET IN THE HEADER PARAM
+Authentication-token = <TOKEN VALUE>
+-----------------------------------------------------------------------------------------
