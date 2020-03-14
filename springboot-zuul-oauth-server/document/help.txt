@@ -1,0 +1,49 @@
+
+https://github.com/shuaicj/zuul-auth-example
+
+$ mvn clean package
+
+#To start backend server
+$ cd backend-service
+$ mvn spring-boot:run
+
+# To Start Auth Center
+$ cd auth-center
+$ mvn spring-boot:run
+
+#To Start Api Gateway
+$ cd api-gateway
+$ mvn spring-boot:run
+
+$ curl -i -H "Content-Type: application/json" -X POST -d '{"username":"adarsh","password":"adarsh"}' http://localhost:8080/login
+####Example
+$ curl -i -H "Content-Type: application/json" -X POST -d '{"username":"admin","password":"admin"}' http://localhost:8080/login
+
+HTTP/1.1 200
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwiaWF0IjoxNTg0MjE1NzQxLCJleHAiOjE1ODQzMDIxNDF9.twwpRinYLxlc3ikblBM1qyQPJ6tYyJbX4Ng96M8nj08
+Date: Sat, 14 Mar 2020 19:55:41 GMT
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Transfer-Encoding: chunked
+
+
+$ curl -i -H "Authorization: Bearer <token-value>" http://localhost:8080/backend/user
+####Example
+$ curl -i -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwiaWF0IjoxNTg0MjE1NzQxLCJleHAiOjE1ODQzMDIxNDF9.twwpRinYLxlc3ikblBM1qyQPJ6tYyJbX4Ng96M8nj08" http://localhost:8080/backend/user
+HTTP/1.1 200
+Date: Sat, 14 Mar 2020 19:56:45 GMT
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Type: text/plain;charset=UTF-8
+Transfer-Encoding: chunked
+
+Hello User!
+

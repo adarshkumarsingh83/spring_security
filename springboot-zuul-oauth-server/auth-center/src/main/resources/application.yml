@@ -1,0 +1,4 @@
+server:
+  port: 8081
+
+espark.security.jwt.secret: otherpeopledontknowit
