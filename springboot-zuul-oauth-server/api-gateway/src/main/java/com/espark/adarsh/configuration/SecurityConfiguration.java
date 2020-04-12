@@ -34,18 +34,18 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .formLogin().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                    .anonymous()
+                .anonymous()
                 .and()
-                    .exceptionHandling().authenticationEntryPoint(
-                            (request, response, exception) -> response.sendError(HttpServletResponse.SC_UNAUTHORIZED))
+                .exceptionHandling().authenticationEntryPoint((request, response, exception)
+                                    -> response.sendError(HttpServletResponse.SC_UNAUTHORIZED))
                 .and()
-                    .addFilterAfter(new JwtTokenAuthenticationFilter(jwtAuthenticationConfig),
-                            UsernamePasswordAuthenticationFilter.class)
+                .addFilterAfter(new JwtTokenAuthenticationFilter(jwtAuthenticationConfig),
+                                            UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
-                    .antMatchers(jwtAuthenticationConfig.getUrl()).permitAll()
-                    .antMatchers("/backend/admin").hasRole("ADMIN")
-                    .antMatchers("/backend/user").hasRole("USER")
-                    .antMatchers("/backend/guest").permitAll();
+                .antMatchers(jwtAuthenticationConfig.getUrl()).permitAll()
+                .antMatchers("/backend/admin").hasRole("ADMIN")
+                .antMatchers("/backend/user").hasRole("USER")
+                .antMatchers("/backend/guest").permitAll();
     }
 }
 

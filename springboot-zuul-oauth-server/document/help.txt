@@ -9,7 +9,7 @@ $ mvn spring-boot:run
 
 # To Start Auth Center
 $ cd auth-center
-$ mvn spring-boot:run
+$ mvn spring-boot:runc
 
 #To Start Api Gateway
 $ cd api-gateway
@@ -30,8 +30,10 @@ Expires: 0
 X-Frame-Options: DENY
 Transfer-Encoding: chunked
 
-
+$ curl -i -H "Authorization: Bearer <token-value>" http://localhost:8080/backend/admin
 $ curl -i -H "Authorization: Bearer <token-value>" http://localhost:8080/backend/user
+$ curl  http://localhost:8080/backend/guest
+
 ####Example
 $ curl -i -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwiaWF0IjoxNTg0MjE1NzQxLCJleHAiOjE1ODQzMDIxNDF9.twwpRinYLxlc3ikblBM1qyQPJ6tYyJbX4Ng96M8nj08" http://localhost:8080/backend/user
 HTTP/1.1 200

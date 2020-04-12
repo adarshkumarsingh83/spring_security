@@ -17,7 +17,6 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 /**
  * Authenticate requests with header 'Authorization: Bearer jwt-token'.
- *
  */
 public class JwtTokenAuthenticationFilter extends OncePerRequestFilter {
 
@@ -43,8 +42,9 @@ public class JwtTokenAuthenticationFilter extends OncePerRequestFilter {
                 List<String> authorities = claims.get("authorities", List.class);
                 if (userName != null) {
                     UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken
-                            = new UsernamePasswordAuthenticationToken(userName, null,
-                            authorities.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList()));
+                            = new UsernamePasswordAuthenticationToken(userName,
+                            null, authorities.stream().map(SimpleGrantedAuthority::new)
+                            .collect(Collectors.toList()));
                     SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
                 }
             } catch (Exception ignore) {
