@@ -1,0 +1,28 @@
+SPRING BOOT OKTA OAUTH2 CLIENT
+
+Go to otka site and create a account
+https://developer.okta.com/
+
+Go to Application > Add Application.
+
+Select application type Web and click Next.
+
+Give the app a name. I named mine “Spring Boot OAuth”.
+
+Under Login redirect URIs change the value to http://localhost:8080/login/oauth2/code/okta.
+
+NOTE: API > Authorization Servers> Okta issuer URL somethings like => dev-123456.okta.com
+add into the file also
+
+The rest of the default values will work.
+
+Click Done.
+
+Leave the page open of take note of the Client ID and Client Secret.
+
+# compile the code
+$ mvn clean package
+
+# Start the client
+$ mvn spring-boot:run
+http://localhost:8080

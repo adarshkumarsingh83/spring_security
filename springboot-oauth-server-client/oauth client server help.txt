@@ -1,0 +1,30 @@
+
+# compile the code 
+# build the server code 
+$ mvn clean package 
+
+# Start the server 
+$ mvn spring-boot:run 
+
+$ curl localhost:8081/auth/user/me
+
+{
+  "error": "unauthorized",
+  "error_description": "Full authentication is required to access this resource"
+}
+
+==========================================================================================
+# compile the code 
+$ mvn clean package 
+
+#Start the spring boot client 
+$ mvn spring-boot:run 
+
+#hit the url 
+http://localhost:8082
+usernamae = adarsh 
+pwd = radha 
+
+
+==========================================================================================
+
