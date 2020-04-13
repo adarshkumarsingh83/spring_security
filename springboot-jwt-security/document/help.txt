@@ -1,0 +1,11 @@
+$ mvn clean package
+$ mvn spring-boot:run
+
+ curl -H "Content-Type:application/json" -d '{"userName":"adarsh@kumar","password":"radha"}' \
+  -X POST http://localhost:8080/authenticate
+
+ curl -H "Content-Type:application/json" -d '{"userName":"radha@kumar","password":"adarsh"}' \
+  -X POST http://localhost:8080/authenticate
+
+curl -X GET http://localhost:8080/Student \
+ -H "Authorization: Bearer xxxxxxxxxxx"
