@@ -23,7 +23,7 @@ public class DataInitalizer {
         //radha
         User admin = new User("adarsh@kumar", "$2a$10$LeTpxiUNFg2aP1gviLSuHe1DmVi3vOUrXt5YS.AnKFFL6s6IFHO0m", "ROLE_ADMIN");
         //adarsh
-        User test = new User("radha@gmail.com", "$2a$10$E55wlprnWwfkNCKg0FR/OOKkZPAIt3ILQsaB4Pm7bbuQjdwdaCxFS", "ROLE_USER");
+        User test = new User("radha@singh", "$2a$10$E55wlprnWwfkNCKg0FR/OOKkZPAIt3ILQsaB4Pm7bbuQjdwdaCxFS", "ROLE_USER");
         userRepository.save(admin);
         userRepository.save(test);
 
