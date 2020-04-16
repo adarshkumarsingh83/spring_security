@@ -90,7 +90,8 @@ JWT WORK IN AUTHENTICATIN
  validated the token for expiry and signature.
 9.auth-server  uses the client-id secret which is  already with the auth-server to
  get the user information form the token and validate the user information 
- and get the access privilege and return back to the resource-server 
+ and get the access privilege for the user based on the user informaton 
+ and return back to the resource-server 
 10.now resource-server has the access privilege which it will set to the security context 
 of the application and check the original resource request by the user and fetch the resource
 for the user 
