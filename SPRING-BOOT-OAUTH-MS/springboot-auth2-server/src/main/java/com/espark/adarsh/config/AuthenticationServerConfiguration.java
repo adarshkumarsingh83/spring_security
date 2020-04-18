@@ -30,6 +30,9 @@ public class AuthenticationServerConfiguration extends AuthorizationServerConfig
     @Value("${espark.oauth2.client.authorized-grant-types}")
     private String grantType;
 
+    @Value("${espark.oauth2.client.redirect}")
+    private String redirectUris;
+
     @Autowired
     PasswordEncoder passwordEncoder;
 
@@ -57,8 +60,8 @@ public class AuthenticationServerConfiguration extends AuthorizationServerConfig
                 .scopes(scopes)
                 .autoApprove(true)
                 .accessTokenValiditySeconds(5000)
-                .refreshTokenValiditySeconds(50000);
-        //.redirectUris(RedirectURLs);
+                .refreshTokenValiditySeconds(50000)
+                .redirectUris(redirectUris);
     }
 
 }

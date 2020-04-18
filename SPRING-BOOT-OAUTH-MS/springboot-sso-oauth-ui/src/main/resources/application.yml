@@ -1,0 +1,16 @@
+
+server:
+  port: 8080
+  servlet:
+    session:
+      cookie:
+        name: ESPARK-SESSION
+security:
+  oauth2:
+    client:
+      client-id: espark-app
+      client-secret: secret
+      user-authorization-uri: http://localhost:9090/oauth/authorize
+      access-token-uri: http://localhost:9090/oauth/token
+    resource:
+      token-info-uri: http://localhost:9090/oauth/check_token
