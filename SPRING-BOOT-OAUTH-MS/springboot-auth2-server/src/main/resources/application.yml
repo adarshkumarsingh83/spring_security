@@ -1,0 +1,19 @@
+server:
+  port: 9090
+
+#spring:
+#  security:
+#    user:
+#      name: admin
+#      password: admin
+#      roles: ADMIN,USER
+#  oauth2:
+#    client:
+#      client-id: espark-app
+#      client-secret: secret
+#      access-token-validity-seconds: 3600
+#      authorized-grant-types: authorization_code,refresh_token,password,client_credentials
+#      scope: READ,WRITE
+#    authorization:
+#      check-token-access: permitAll()
+

@@ -1,0 +1,10 @@
+
+security:
+  oauth2:
+    client:
+      clientId: client-id
+      clientSecret: client-secret
+    resource:
+      tokenInfoUri: http://localhost:9090/oauth/introspect
+
+
