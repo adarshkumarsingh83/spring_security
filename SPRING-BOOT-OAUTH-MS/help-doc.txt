@@ -34,5 +34,8 @@ $ curl --location --request GET 'http://localhost:8181/api/message' \
 #After Executing the springboot-sso-auth-ui 
 for home page in browser 
 http://localhost:8080/
+ 
+use admin:admin in secure page for data fetching successful
+use user:user in secure page for date fetching failure 
 
 

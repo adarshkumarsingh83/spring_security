@@ -14,3 +14,8 @@ security:
       access-token-uri: http://localhost:9090/oauth/token
     resource:
       token-info-uri: http://localhost:9090/oauth/check_token
+
+
+espark:
+  service:
+    url: http://localhost:8181/api/employees

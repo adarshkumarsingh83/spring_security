@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -18,7 +18,56 @@
         <div class="jumbotron">
             <h1>ESPARK SECURE PAGE</h1>
         </div>
+
+        <div>
+            <form name="fetch-employees" th:action="@{/employee}" th:formmethod="GET">
+                <button type="submit" class="btn btn-primary">employees</button>
+            </form>
+        </div>
+
+        <br/>
+        <br/>
+
+        <div th:unless="${error==null}">
+            <table class="table">
+                <thead>
+                <tr>
+                    <td>Status code</td>
+                    <td>Error</td>
+                </tr>
+                </thead>
+                <tr>
+                    <td><span th:text="${error.statusCode}"></span></td>
+                    <td><span th:text="${error.body}"></span></td>
+                </tr>
+            </table>
+        </div>
+
+        <br/>
+        <div th:if="${error==null}">
+            <table class="table">
+                <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                </tr>
+                </thead>
+
+                <tbody>
+
+                <tr th:each="employee: ${employees}">
+                    <td><span th:text="${employee.id}"></span></td>
+                    <td><span th:text="${employee.firstName}"></span></td>
+                    <td><span th:text="${employee.lastName}"></span></td>
+                </tr>
+
+                </tbody>
+
+            </table>
+        </div>
     </center>
+
 
 </div>
 
