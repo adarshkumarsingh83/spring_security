@@ -1,36 +1,103 @@
+===========================================================================================
+Terms in OAuth
+===========================================================================================
+Access Token : 
+Refresh Token : its a token to get the new token when access token is expired. 
+Client_id/Secret :
+Scope : Allowed Permission 
+Jwt : a way to pass the information in encrypted manner 
+===========================================================================================
+Grant Type 
+===========================================================================================
+Authorization code 
+Client Credentials
+Implicit
+Password
+Device code 
+===========================================================================================
+Entities 
+===========================================================================================
+Resource : Actual Resource eg (Product,Customer or Employee)
+Resource Server : Server which hold the Resource with it 
+Resource Owner : is the person who has authorities to grant persimmon to client for access 
+Auth Server : who do the authentication of the resource owner and confirm the consensus for sharing resource with client
+Client : is the app who wants to access the resource hold by resource server 
+===========================================================================================
 OATH IN GENERIC APPLICATION
+===========================================================================================
 1.user login to the client application 
 2.client-server will make request to client-auth-server for authentication 
 3.client-auth-server will authentication user 
 4.user will get access to the client application 
 5.user proceed will action which required resource on the resource-server 
 6.client-server will make request to the resource-server for access the resource 
-7.resource-server will notified the resource owner which is user 
-saying that client-server want to access resource from resource-server and show the login 
-window for the user for loggin in to the resource-server 
-8.user will enter the credentials for the resource-server in login screen
-9.resource-server will send the credentials to the resource-auth-server for authentication
-10. then  resource-auth-server will authentication the user 
-11. then resource-server will show the information about the resource which
+7.resource-server will forward the request to the resource-auth-server which notified
+ the resource owner saying that client-server want to access resource from resource-server
+ and show the login window for the resource owner for login in to the resource-server 
+8.resource owner will enter the credentials for the resource-server in login screen
+9.resource-auth-server will take the credentials for authentication
+10. then  resource-auth-server will authentication the resource owner 
+11. then resource-auth-server will show the information about the resource which
  client-server want to access from the resource-server 
-12.then user will allow the access to the resource holding by the resource-server 
-13.then resource-server will request the resource-auth-server to generate a token which is authentication token 
+12.then resource owner will allow the access to the resource holding by the resource-server 
+13.then resource-auth-server will generate a token which is authentication token 
 13.1 then authentication token  will send to client-server 
 13.2 then authentication token  is verified by client-server and respond back to the resource-server
 13.3 then resource-serve with the help of the resource-auth-server will create a access token 
-with the access privilege to acces the resource on the resource-server.
+     with the access privilege to accces the resource on the resource-server.
 14.then resource-auth-server will generate a token with appropriate access permissions 
 15.this token will be given back to the client-server for further communications with resource-server 
 16.then client-server will make a request to the resource-server with token provided by resource-server 
 17.then resource-server will intercept the token and then send to the resource-auth-server for authentication 
 18.once the token is verified then resource-server will grant access to the client-server request 
-to access the resource hold by resource-server 
+    to access the resource hold by resource-server 
 19.resource-server will get the requested resource 
 20 resource-server will return the requested resource resource will return to the client-server
 
+NOTE:
+@@@@ CLIENT APPLICATION 
+1.has client id and client secret
+2.has the service url of the resource-server to fetch the resource
+3.has resource-auth-server authorization url 
+4.has resource-auth-server token generation url
+5.has resource-auth-server token validation url
+becoz client application is registed with the resource-auth-server already 
+that is why client server know how how can it get the resource hold by resource-server 
 
+@@@ RESOURCE SERVER 
+1.has client id and client secret
+2.has resource-auth-server token validation url
 
+@@@ RESOURCE AUTH SERVER 
+1.has client id and client secret
+2.has client scope which that what are the access privilege client application has 
+3.has the client redirection url after authentication successful it has to redirect to it
+4.has the grant types 
+5.has the credentials for authentication 
+6.has the roles for the users 
+
+resource-owner will do operation on client-server which need resource from the 
+resource-server becoz client-server is already register will the resource-server so some 
+information about the client-server is already with resource-server and resource-auth-server
+client-server will hit the url for accessing the resource from the resource-server that 
+request will be forwarded to the resource-auth-server by resource-server for authentication 
+resource-auth-server will see request is not authentication but it originated from the 
+register client-server so it will check the client id and client secret and show to dialog 
+login to the resource-owner saying that login for authentication once resource-owner login 
+into the resource-auth-server then resource-auth-server will show the requested resource 
+access page to the resource-owner and get the consensus from the resource-owner that 
+is he allow to client-server to access the resource hold by resource server once 
+resource-owner grant access then authentication token is generated and share by 
+the client-server then client-server will make request to the resource-server for accessing 
+the resource from the resource-server then again the resource-server  will again forward 
+the request to the resource-auth-server for validating the token request and 
+resource-auth-server will authenticate the request and then resource-server  
+will respond back with the resource to the client-server 
+
+ 
+===========================================================================================
 OAUTH IN MICROSERVICES 
+===========================================================================================
 0.User is already authenticated 
 1.User will make request to the api server for information related 
   to the personal academic and contact 
@@ -63,8 +130,9 @@ access privilege in token is not mentioned then micro-service-2 will deny the re
   api-server 
 14.then api-server will return the data to the client   
 
-
+===========================================================================================
 JWT WORK IN AUTHENTICATIN 
+===========================================================================================
 1.user make a request to the resource-server for accessing the resource 
 2.server will deny the request and instruct for login 
 3.user will make a request to the server with valid credentials and pass the client-id in header 
@@ -98,4 +166,4 @@ of the application and check the original resource request by the user and fetch
 for the user 
 11. resource-server will get the requested resource then create a http response 
 12. resource-server will return the http response to the user and clear the security context
- 
+ ===========================================================================================
