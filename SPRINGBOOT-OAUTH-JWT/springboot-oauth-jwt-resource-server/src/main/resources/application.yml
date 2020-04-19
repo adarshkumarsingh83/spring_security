@@ -1,0 +1,32 @@
+server:
+  port: 8181
+
+spring:
+  application:
+    name: jwt-oauth-resource-server
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: root
+    password: root
+    driver-class-name: org.h2.Driver
+    initialization-mode: always
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl: true
+
+security:
+  oauth2:
+    resource:
+      jwt:
+        key-value: |
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAomA12xUrnwcWgQHM+pdv
+          Jr6P/fWwmMSwOWiRfcheKGC3Scv0bEZjl+uQe8qUSGwkoegme6zddmaq5jZRYgKl
+          EOrK7IZxuhKBqKYm5XtALaKHDT13bc9L1OAyoZz510W4RoXLR346khYdazFJ64Ed
+          dUd+Y9+JKnSC1GKDyg4S+w4kJwOJTSRPxnYa4yKaNumxNVqT+w3HEpT0WRlYCkP1
+          aPrtmoYvBClR7eiezeJKKWrmMXPYo/7ETZVSNJeVz9Hq/gT3U/gpxqgkvJjWmQT1
+          O9FxSEfcCnNmoREkWkvhNxrYjE9ntCbrOMtWZHsc4cefKeGaXPzFuukq+Siw49SE
+          jQIDAQAB
+          -----END PUBLIC KEY-----
+
+
