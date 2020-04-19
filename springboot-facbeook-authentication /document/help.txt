@@ -1,0 +1,11 @@
+
+1.create application in the facbook
+https://developers.facebook.com/
+1.login with fb credentials
+2.myapp -> create app -> "espark-authentication" -> create app id -> you will land in home page of apps
+ setting -> basic -> App ID , App  => Secret copy the value for yml configurations .
+3.dashboard -> facebook login -> setup -> settings -> Client OAuth Login & Web OAuth Login = enable
+
+
+
+

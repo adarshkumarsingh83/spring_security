@@ -24,7 +24,13 @@ $ curl --location --request POST 'localhost:9090/oauth/token' \
 ### TO VIEW THE DETAILS OF THE TOKEN FROM AUTH SERVER 
 $ curl --location --request GET 'localhost:9090/oauth/check_token?token=<JWT-TOKEN-VALUE>' \
   --header 'Authorization: Basic ZXNwYXJrLWFwcDpzZWNyZXQ='
+  
+NOTE WE CAN VERIFY THE AUTH TOKEN BY GOING TO 
+https://jwt.io/
+And provide the auth token public key and privat key to view the data into the token   
 
 ##TO FETCH THE DATA FROM RESOURCE SERVER 
 $ curl --location --request GET 'http://localhost:8181/api/employees' \
 --header 'Authorization: Bearer <JWT-TOKEN-VALUE'
+
+
