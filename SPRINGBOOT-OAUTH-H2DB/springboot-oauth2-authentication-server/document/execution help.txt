@@ -1,0 +1,64 @@
+$  keytool -genkeypair -alias jwt -keyalg RSA --keypass password -keystore jwt.jks --storepass password
+What is your first and last name?
+  [Unknown]:  adarsh kumar
+What is the name of your organizational unit?
+  [Unknown]:  espark edu
+What is the name of your organization?
+  [Unknown]:  espark
+What is the name of your City or Locality?
+  [Unknown]:  dallas
+What is the name of your State or Province?
+  [Unknown]:  tx
+What is the two-letter country code for this unit?
+  [Unknown]:  us
+Is CN=adarsh kumar, OU=espark edu, O=espark, L=dallas, ST=tx, C=us correct?
+  [no]:  yes
+
+
+Warning:
+The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore jwt.jks -destkeystore jwt.jks -deststoretype pkcs12".
+
+
+$ keytool -importkeystore -srckeystore jwt.jks -destkeystore jwt.jks -deststoretype pkcs12
+Enter source keystore password:
+Entry for alias jwt successfully imported.
+Import command completed:  1 entries successfully imported, 0 entries failed or cancelled
+
+Warning:
+Migrated "jwt.jks" to Non JKS/JCEKS. The JKS keystore is backed up as "jwt.jks.old".
+
+$  keytool -list -rfc --keystore jwt.jks | openssl x509 -inform pem -pubkey -noout
+
+Enter keystore password:  password
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmZgOP39/ocyPnBl8IoUp
+WYYAij2NHcM+7fwccUC7vL3/jQ0SHKFLthOUb+zUr/8B1WM2y8/M5zKGOxp8wVI+
+oaqsixD/FiHN9nbqLrHUaPdJTxdX+UFITnFfh0of8SLkrtQEhzLZanXMUfII/Rq5
+H8G2clrbUsVuM0KpAK7bHGKERQoBzlGbEKQNF5DYBNAYpdDRhZ1LGi67/RuAILYK
+7/8e1cZAagCyEmWJZ2H6VKKb2u8booYS8xAoyewMvs1QloyUhqXTYaDzfher//Gv
+3cr0/Rn5nX3Ron0L2IaVoMvxNcBUzZwYsL4X/onkZiuidLVfe0tP3HTVAFtxyaFw
+uQIDAQAB
+-----END PUBLIC KEY-----
+-----BEGIN CERTIFICATE-----
+MIIDbzCCAlegAwIBAgIEediNRzANBgkqhkiG9w0BAQsFADBoMQswCQYDVQQGEwJ1
+czELMAkGA1UECBMCdHgxDzANBgNVBAcTBmRhbGxhczEPMA0GA1UEChMGZXNwYXJr
+MRMwEQYDVQQLEwplc3BhcmsgZWR1MRUwEwYDVQQDEwxhZGFyc2gga3VtYXIwHhcN
+MjAwNDE5MjMwMjI5WhcNMjAwNzE4MjMwMjI5WjBoMQswCQYDVQQGEwJ1czELMAkG
+A1UECBMCdHgxDzANBgNVBAcTBmRhbGxhczEPMA0GA1UEChMGZXNwYXJrMRMwEQYD
+VQQLEwplc3BhcmsgZWR1MRUwEwYDVQQDEwxhZGFyc2gga3VtYXIwggEiMA0GCSqG
+SIb3DQEBAQUAA4IBDwAwggEKAoIBAQCZmA4/f3+hzI+cGXwihSlZhgCKPY0dwz7t
+/BxxQLu8vf+NDRIcoUu2E5Rv7NSv/wHVYzbLz8znMoY7GnzBUj6hqqyLEP8WIc32
+duousdRo90lPF1f5QUhOcV+HSh/xIuSu1ASHMtlqdcxR8gj9GrkfwbZyWttSxW4z
+QqkArtscYoRFCgHOUZsQpA0XkNgE0Bil0NGFnUsaLrv9G4Agtgrv/x7VxkBqALIS
+ZYlnYfpUopva7xuihhLzECjJ7Ay+zVCWjJSGpdNhoPN+F6v/8a/dyvT9GfmdfdGi
+fQvYhpWgy/E1wFTNnBiwvhf+ieRmK6J0tV97S0/cdNUAW3HJoXC5AgMBAAGjITAf
+MB0GA1UdDgQWBBQbMF8TMi9/oMSjDmFZF/yFEoc2VjANBgkqhkiG9w0BAQsFAAOC
+AQEAeYyHJYaAC+mXc8jMpmtu6I+ARJDhWcUSnG9seM4iV//mD6zLh1eHM7i3MQ1f
+on6i6I/IQ7DZW9eBaST/fLD57oSenQZYiil859kTk+2XtVfLbF7qtH/8ftM913dq
+HwvBunnRyolstS/5Mx3ND0lhNqXYpPG1xkEDH+B1QILwy3v4aJiDBcGeSOboQwKS
+bbRd1oipmsjFpMRMPCmkfkAt/UMNE7C6Ue+79qg+yNieuNEQowLnQzSa+SF5lb2J
+ho5UiX5WFsOIX0q619s9KKZJKY91DCbE9sQOTaK9ybNv/zYa7gbw87zQi1iE0hYl
+tHO+c6hni30mqc5WmD/zPwwREQ==
+-----END CERTIFICATE-----
+
+$

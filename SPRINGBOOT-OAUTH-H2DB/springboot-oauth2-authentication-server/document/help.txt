@@ -1,0 +1,47 @@
+
+========================================================================================================================
+## Generate key store file
+  this will generate jwt.jks which contains public and private keys
+ $ cd src/main/resources/
+ $ keytool -genkeypair -alias jwt -keyalg RSA --keypass password -keystore jwt.jks --storepass password
+
+## Moving to PKCS12
+  this cmd will prompt for key-store password
+  after execution this cmd will generate jwt.jks copy that file to resource dir of application
+ $ keytool -importkeystore -srckeystore jwt.jks -destkeystore jwt.jks -deststoretype pkcs12
+
+## export the public key
+  after execution of this cmd copy the public key from save for resource server config
+  ---- BEGIN PUBLIC KEY ------
+  			XXX
+  			XXX
+  ----- END PUBLIC KEY -------
+ $ keytool -list -rfc --keystore jwt.jks | openssl x509 -inform pem -pubkey
+
+NOTE :
+  for help get check the file keystore-execution.txt
+========================================================================================================================
+
+
+$ curl --location --request POST 'localhost:9090/oauth/token' \
+--header 'Authorization: Basic ZXNwYXJrLWFwcDpzZWNyZXQ=' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'grant_type=password' \
+--data-urlencode 'username=adarsh' \
+--data-urlencode 'password=adarsh'
+
+$ curl --location --request GET 'localhost:9090/oauth/check_token?token=<TOKEN-VALUE>' \
+--header 'Authorization: Basic ZXNwYXJrLWFwcDpzZWNyZXQ='
+
+$ curl --location --request POST 'localhost:9090/oauth/token' \
+  --header 'Authorization: Basic ZXNwYXJrLWFwcDpzZWNyZXQ=' \
+  --header 'Content-Type: application/x-www-form-urlencoded' \
+  --data-urlencode 'grant_type=password' \
+  --data-urlencode 'username=radha' \
+  --data-urlencode 'password=radha'
+
+ $ curl --location --request GET 'localhost:9090/oauth/check_token?token=<TOKEN-VALUE>' \
+   --header 'Authorization: Basic ZXNwYXJrLWFwcDpzZWNyZXQ='
+
+
+$ curl localhost:9100/me -H "Authorization: Bearer <Token Value >"
