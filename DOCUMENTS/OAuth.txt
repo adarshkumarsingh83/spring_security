@@ -1,0 +1,59 @@
+===========================================================================================
+Entities 
+===========================================================================================
+Resource : Actual Resource eg (Product,Customer or Employee)
+
+Resource Server : Server which hold the Resource with it 
+
+Resource Owner : is the person who has authorities to grant persimmon to client for access 
+
+Auth Server : who do the authentication of the resource owner and confirm the consensus for
+				 sharing resource with client
+
+Client : is the app who wants to access the resource hold by resource server 
+===========================================================================================
+Terms in OAuth
+===========================================================================================
+Access Token: access token represents the authorization of a client application to access 
+	    specific parts of a resource of resource owner  
+	    
+Refresh Token : its a token to get the new token when access token is expired. 
+
+Client_id/Secret : client_id is a public identifier for apps
+			client_secret is a secret known only to the application and the authorization server
+			
+Scope:  limit an client access to resources of the resource owner. 
+
+Jwt : a way to pass the information in encrypted manner 
+
+===========================================================================================
+Grant Type 
+===========================================================================================
+Authorization code : Authorization Code grant type is used by confidential and public
+					 clients to exchange an authorization code for an access token.
+					 After the user returns to the client via the redirect URL, 
+					 the application will get the authorization code from the URL and 
+					 use it to request an access token
+					 
+Client Credentials :  grant type is used by clients to obtain an access token outside 
+					of the context of a user. typically used by clients to access resources 
+					about themselves rather than to access a user's resources.
+					
+Refresh Token :   grant type is used by clients to exchange a refresh token for an access 
+				  token when the access token has expired.							
+				  					
+Device code :    browserless or input-constrained devices in the device flow to exchange 
+				 a previously obtained device code for an access token.
+				 
+Implicit:   :    the access token was returned immediately without an extra authorization
+				  code exchange
+
+Password    :	 Password grant type is a way to exchange a user's credentials for an 
+					access token. Because the client application has to collect the user's 
+					password and send it to the authorization server				 
+===========================================================================================
+SPRING BOOT APPLICATIN DEVELPMENT HELP
+===========================================================================================
+1. 
+
+
