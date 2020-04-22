@@ -1,3 +1,5 @@
+https://blog.marcosbarbero.com/centralized-authorization-jwt-spring-boot2/
+
 ===========================================================================================
 Entities 
 ===========================================================================================
@@ -54,6 +56,86 @@ Password    :	 Password grant type is a way to exchange a user's credentials for
 ===========================================================================================
 SPRING BOOT APPLICATIN DEVELPMENT HELP
 ===========================================================================================
-1. 
+1. POM.XML DEPENDENCY 
+
+     <properties>
+		<spring-cloud.version>Hoxton.SR3</spring-cloud.version>
+	</properties>
+	
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-security</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework.cloud</groupId>
+		<artifactId>spring-cloud-starter-oauth2</artifactId>
+	</dependency>
+		
+<dependencyManagement>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+		  		<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+</dependencyManagement>
 
 
+==========================================================================================
+2.GENERATE KEYS 
+
+## Generate key store file
+  this will generate jwt.jks which contains public and private keys
+ $ cd src/main/resources/
+ $ keytool -genkeypair -alias jwt -keyalg RSA --keypass password -keystore jwt.jks --storepass password
+
+## Moving to PKCS12
+  this cmd will prompt for key-store password
+  after execution this cmd will generate jwt.jks copy that file to resource dir of application
+ $ keytool -importkeystore -srckeystore jwt.jks -destkeystore jwt.jks -deststoretype pkcs12
+
+## export the public key
+  after execution of this cmd copy the public key from save for resource server config
+  ---- BEGIN PUBLIC KEY ------
+  			XXX
+  			XXX
+  ----- END PUBLIC KEY -------
+ $ keytool -list -rfc --keystore jwt.jks | openssl x509 -inform pem -pubkey
+
+NOTE :
+COPY THE JKS FILE IN THE RESOURCE DIR OF THE AUTH-SERVER 
+COPY THE PUBLIC KEY FOR THE RESOURCE-SERVER
+==========================================================================================
+STEP 3 CREATE DATABASE AND TABLE 
+
+==========================================================================================
+STEP 4 CREATE CONFIG CLASS FOR SECURITY 
+ extends class from WebSecurityConfigurerAdapter and annotate with @EnableWebSecurity
+ override configure method for setting up user details service and password encoder 
+ create pwd encode 
+ crete user details service 
+ create authentication manager 
+ 
+==========================================================================================
+STEP 5. CREATE CONFIG CLASS FOR OAUTH SERVER 
+
+
+==========================================================================================
+
+==========================================================================================
+==========================================================================================
+==========================================================================================
+==========================================================================================
+==========================================================================================
+==========================================================================================
+==========================================================================================
+==========================================================================================
+==========================================================================================
+==========================================================================================
+==========================================================================================
+==========================================================================================
+==========================================================================================
+==========================================================================================

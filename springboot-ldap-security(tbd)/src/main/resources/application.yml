@@ -1,0 +1,18 @@
+logging:
+  level:
+    root: DEBUG
+spring:
+  application:
+    name: spring-ladp
+  ldap:
+    embedded:
+      port: 8389
+      ldif: claspath:esparkServer.ldif
+      base-dn:
+        - dc=springframework,dc=org
+
+
+server:
+  port: 8080
+
+
