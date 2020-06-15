@@ -56,7 +56,7 @@
         <project.name>SpringSecurityMvcJersyRestTokenAuthentication</project.name>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.7</java.version>
-        <springframework.version>4.1.6.RELEASE</springframework.version>
+        <springframework.version>5.2.7.RELEASE</springframework.version>
         <springframework.security.version>4.0.1.RELEASE</springframework.security.version>
         <!-- persistence -->
         <hibernate.version>4.3.5.Final</hibernate.version>
