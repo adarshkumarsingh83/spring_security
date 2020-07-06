@@ -36,3 +36,252 @@ ESPARK SPRING SECURITY EXAMPLES
 - Spring Security Web Mvc Rest Example	
 - Spring Security Web Mvc Rest Token Authentication Annotation Example	
 - Spring Security Web Mvc Rest Token Authentication Xml Example	
+
+
+
+
+* ### DOCUMENTS										
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityJdbcCustomUserDetailsApplication						
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityJerseyRestExample							
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityJersyRestTokenAuthentication
+> descripition:
+> .
+> .
+> .
+
+* ### SPRING-BOOT-OAUTH-JWT									
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityMvcJersyRestTokenAuthentication
+> descripition:
+> .
+> .
+> .
+
+* ### SPRING-BOOT-OAUTH-MS									
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityMvcRestEasyTokenAuthentication
+> descripition:
+> .
+> .
+> .
+
+* ### SPRINGBOOT-OAUTH-H2DB									
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityRestEasyExample
+> descripition:
+> .
+> .
+> .
+
+* ### SPRINGBOOT-OAUTH-JWT									
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityRestEasyTokenAuthentication
+> descripition:
+> .
+> .
+> .
+
+* ### SpringMvcRestJsonViewSecurityTokenAuthentication					
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityRestMvcTokenAuthentication
+> descripition:
+> .
+> .
+> .
+
+* ### SpringRestJsonViewSecurityTokenAuthentication						
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityRestMvcTokenAuthenticationAnnotationExample
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityDatabaseQueryAnnotatonExample						
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityWebMvcRestExample
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityDatabaseQueryApplication							
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityWebMvcRestTokenAuthenticationAnnotationExample
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityEmbeddedLdapAnnotationExample						
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityWebMvcRestTokenAuthenticationXmlExample
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityEmbeddedLdapXmlApplication						
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityExternalLdapAnnotationExample						
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityExternalLdapXmlApplication						
+> descripition:
+> .
+> .
+> .
+
+* ### springboot-facbeook-authentication 
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityHIbernateCustomUserDetailsAnnotatonExample			
+> descripition:
+> .
+> .
+> .
+
+* ### springboot-jwt-security
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityHibernateCustomUserDetailsApplication					
+> descripition:
+> .
+> .
+> .
+
+* ### springboot-ldap-security(tbd)
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityInMemoaryAnnotatonExample							
+> descripition:
+> .
+> .
+> .
+
+* ### springboot-oauth-server-client
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityInMemoaryExternalPropertiesAnnotatonExample				
+> descripition:
+> .
+> .
+> .
+
+* ### springboot-oauth2
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityInMemoryPropertiesApplication						
+> descripition:
+> .
+> .
+> .
+
+* ### springboot-okta-client
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityInMemoryStandAloneApplication						
+> descripition:
+> .
+> .
+> .
+
+* ### springboot-security-jwt
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityInMemoryXmlApplication							
+> descripition:
+> .
+> .
+> .
+
+* ### springboot-zuul-oauth-server
+> descripition:
+> .
+> .
+> .
+
+* ### SpringSecurityJdbcCustomUserDetailsAnnotatonExample
+> descripition:
+> .
+> .
+> .
