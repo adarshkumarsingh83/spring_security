@@ -92,9 +92,9 @@ A grant is a method of acquiring an access token
  client-server want to access from the resource-server 
 * 12.then resource owner will allow the access to the resource holding by the resource-server 
 * 13.then resource-auth-server will generate a token which is authentication token 
-* 13.1 then authentication token  will send to client-server 
-* 13.2 then authentication token  is verified by client-server and respond back to the resource-server
-* 13.3 then resource-serve with the help of the resource-auth-server will create a access token 
+* a then authentication token  will send to client-server 
+* b then authentication token  is verified by client-server and respond back to the resource-server
+* c then resource-serve with the help of the resource-auth-server will create a access token 
      with the access privilege to accces the resource on the resource-server.
 * 14.then resource-auth-server will generate a token with appropriate access permissions 
 * 15.this token will be given back to the client-server for further communications with resource-server 
@@ -217,6 +217,6 @@ access privilege in token is not mentioned then micro-service-2 will deny the re
 * 10.now resource-server has the access privilege which it will set to the security context 
 of the application and check the original resource request by the user and fetch the resource
 for the user 
-* 11. resource-server will get the requested resource then create a http response 
-* 12. resource-server will return the http response to the user and clear the security context
+* 11.resource-server will get the requested resource then create a http response 
+* 12.resource-server will return the http response to the user and clear the security context
 ---
