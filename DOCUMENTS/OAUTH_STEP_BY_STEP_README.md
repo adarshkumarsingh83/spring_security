@@ -209,10 +209,7 @@ access privilege in token is not mentioned then micro-service-2 will deny the re
 * 7.user will make the request to the resource-server with the token and client-id 
 * 8.resource-server will take token and forward that to the auth-server for 
  validated the token for expiry and signature.
-* 9.auth-server  uses the client-id secret which is  already with the auth-server to
- get the user information form the token and validate the user information 
- and get the access privilege for the user based on the user information mentioned in token 
- and return back to the resource-server 
+* 9.auth-server  uses the client-id secret which is  already with the auth-server to get the user information form the token and validate the user information and get the access privilege for the user based on the user information mentioned in token and return back to the resource-server 
 * NOTE: jwt always has only authentication not the authorization or acces privilege   
 * 10.now resource-server has the access privilege which it will set to the security context 
 of the application and check the original resource request by the user and fetch the resource
