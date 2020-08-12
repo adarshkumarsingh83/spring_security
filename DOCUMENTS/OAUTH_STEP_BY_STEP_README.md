@@ -92,9 +92,9 @@ A grant is a method of acquiring an access token
  client-server want to access from the resource-server 
 * 12.then resource owner will allow the access to the resource holding by the resource-server 
 * 13.then resource-auth-server will generate a token which is authentication token 
-* a then authentication token  will send to client-server 
-* b then authentication token  is verified by client-server and respond back to the resource-server
-* c then resource-serve with the help of the resource-auth-server will create a access token 
+* 13.1.then authentication token  will send to client-server 
+* 13.2.then authentication token  is verified by client-server and respond back to the resource-server
+* 13.3.then resource-serve with the help of the resource-auth-server will create a access token 
      with the access privilege to accces the resource on the resource-server.
 * 14.then resource-auth-server will generate a token with appropriate access permissions 
 * 15.this token will be given back to the client-server for further communications with resource-server 
@@ -103,7 +103,7 @@ A grant is a method of acquiring an access token
 * 18.once the token is verified then resource-server will grant access to the client-server request 
     to access the resource hold by resource-server 
 * 19.resource-server will get the requested resource 
-* 20 resource-server will return the requested resource resource will return to the client-server
+* 20.resource-server will return the requested resource resource will return to the client-server
 
 ### NOTE:
 **CLIENT APPLICATION**
@@ -161,19 +161,19 @@ information but required academic and contact information from other micro-servi
 * 5.then micro-service-0 will make a call to the micro-service-1 for
   accessing the academic information which is part of the token and 
   it will clearly specify that it has ready or write privilege 
-* 6. micro-service-1 will verify the token and its access privilege and request resource 
+* 6.micro-service-1 will verify the token and its access privilege and request resource 
 and decide that request is valid resource or not if its valid then return the resource. 
 * NOTE:if micro-service-0 will make a request to access the professional information and 
 access privilege in token is not mentioned then micro-service-1 will deny the request to serve 
 * 7.then the information of personale with academic is return to api-server
 * 8.api-server will again make request to the micro-service-0 for personal information with contact 
-* 9. micro-service-0 has personal information but it has to access the 
+* 9.micro-service-0 has personal information but it has to access the 
  contact information form micro-service-2 so it will make the 
  request to the authentication-server with the client-id 
-* 10. authentication-server will check the client-id and then it wil return the token and 
+* 10.authentication-server will check the client-id and then it wil return the token and 
  provide the access privilege in the token 
-* 11. micro-service-0 will user the token and make a request to the micro-service-1
-* 12. micro-service-2 will validate the token and also the access privilege and request for 
+* 11.micro-service-0 will user the token and make a request to the micro-service-1
+* 12.micro-service-2 will validate the token and also the access privilege and request for 
   resource and decide that weather the client which is micro-service-0 is elegible to 
   access the requested resource form micro-service-2 or not if the token has suffice 
   privilege then micro-service-2 will provide the resource as response to the micro-service-0
