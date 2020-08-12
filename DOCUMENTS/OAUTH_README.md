@@ -1,8 +1,9 @@
-https://blog.marcosbarbero.com/centralized-authorization-jwt-spring-boot2/
 
-===========================================================================================
-Entities 
-===========================================================================================
+
+----
+### Entities 
+----
+```
 Resource : Actual Resource eg (Product,Customer or Employee)
 
 Resource Server : Server which hold the Resource with it 
@@ -13,9 +14,12 @@ Auth Server : who do the authentication of the resource owner and confirm the co
 				 sharing resource with client
 
 Client : is the app who wants to access the resource hold by resource server 
-===========================================================================================
-Terms in OAuth
-===========================================================================================
+```
+
+----
+### Terms in OAuth
+----
+```
 Access Token: access token represents the authorization of a client application to access 
 	    specific parts of a resource of resource owner  
 	    
@@ -27,10 +31,12 @@ Client_id/Secret : client_id is a public identifier for apps
 Scope:  limit an client access to resources of the resource owner. 
 
 Jwt : a way to pass the information in encrypted manner 
+```
 
-===========================================================================================
-Grant Type 
-===========================================================================================
+----
+### Grant Type 
+----
+```
 Authorization code : Authorization Code grant type is used by confidential and public
 					 clients to exchange an authorization code for an access token.
 					 After the user returns to the client via the redirect URL, 
@@ -53,10 +59,14 @@ Implicit:   :    the access token was returned immediately without an extra auth
 Password    :	 Password grant type is a way to exchange a user's credentials for an 
 					access token. Because the client application has to collect the user's 
 					password and send it to the authorization server				 
-===========================================================================================
-SPRING BOOT APPLICATIN DEVELPMENT HELP
-===========================================================================================
-1. POM.XML DEPENDENCY 
+
+```
+
+----
+### SPRING BOOT APPLICATIN DEVELPMENT HELP
+----
+```
+* 1. POM.XML DEPENDENCY 
 
      <properties>
 		<spring-cloud.version>Hoxton.SR3</spring-cloud.version>
@@ -84,8 +94,8 @@ SPRING BOOT APPLICATIN DEVELPMENT HELP
 </dependencyManagement>
 
 
-==========================================================================================
-2.GENERATE KEYS 
+----
+* 2.GENERATE KEYS 
 
 ## Generate key store file
   this will generate jwt.jks which contains public and private keys
@@ -108,10 +118,12 @@ SPRING BOOT APPLICATIN DEVELPMENT HELP
 NOTE :
 COPY THE JKS FILE IN THE RESOURCE DIR OF THE AUTH-SERVER 
 COPY THE PUBLIC KEY FOR THE RESOURCE-SERVER
-==========================================================================================
-STEP 3 CREATE DATABASE AND TABLE 
+----
 
-==========================================================================================
+### STEP 3 CREATE DATABASE AND TABLE 
+
+----
+
 STEP 4 CREATE CONFIG CLASS FOR SECURITY 
  extends class from WebSecurityConfigurerAdapter and annotate with @EnableWebSecurity
  override configure method for setting up user details service and password encoder 
@@ -119,23 +131,7 @@ STEP 4 CREATE CONFIG CLASS FOR SECURITY
  crete user details service 
  create authentication manager 
  
-==========================================================================================
-STEP 5. CREATE CONFIG CLASS FOR OAUTH SERVER 
-
-
-==========================================================================================
-
-==========================================================================================
-==========================================================================================
-==========================================================================================
-==========================================================================================
-==========================================================================================
-==========================================================================================
-==========================================================================================
-==========================================================================================
-==========================================================================================
-==========================================================================================
-==========================================================================================
-==========================================================================================
-==========================================================================================
-==========================================================================================
+----
+### STEP 5. CREATE CONFIG CLASS FOR OAUTH SERVER 
+----
+```
