@@ -87,8 +87,8 @@ A grant is a method of acquiring an access token
  and show the login window for the resource owner for login in to the resource-server 
 * 8.resource owner will enter the credentials for the resource-server in login screen
 * 9.resource-auth-server will take the credentials for authentication
-* 10. then  resource-auth-server will authentication the resource owner 
-* 11. then resource-auth-server will show the information about the resource which
+* 10.then  resource-auth-server will authentication the resource owner 
+* 11.then resource-auth-server will show the information about the resource which
  client-server want to access from the resource-server 
 * 12.then resource owner will allow the access to the resource holding by the resource-server 
 * 13.then resource-auth-server will generate a token which is authentication token 
