@@ -75,7 +75,7 @@
 
         <commons-codec.version>1.10</commons-codec.version>
         <common.lang.version>3.1</common.lang.version>
-        <junit.version>4.11</junit.version>
+        <junit.version>4.13.1</junit.version>
         <slf4j.version>1.6.1</slf4j.version>
         <logback.version>1.0.11</logback.version>
     </properties>
