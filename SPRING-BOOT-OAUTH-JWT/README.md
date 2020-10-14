@@ -1,4 +1,7 @@
 
+## [HELP FOR APPLICATION STARTUP PROCESS ](https://github.com/adarshkumarsingh83/spring_security/blob/master/SPRING-BOOT-OAUTH-JWT/springboot-auth-server-jwttoken/document/HELP-README.md)
+## [KEY GENERATION PROCESS](https://github.com/adarshkumarsingh83/spring_security/blob/master/SPRING-BOOT-OAUTH-JWT/springboot-auth-server-jwttoken/document/KEYSTORE-EXECUTION-README.md)
+
 ### NOTE:MAKE SURE PUBLIC KEY IS COPIED IN RESOURCE SERVER OTHER WISE CHECK THE HELP DOC IN TEH SERVER DOCUMENT.
 
 * $ mvn clean package 
