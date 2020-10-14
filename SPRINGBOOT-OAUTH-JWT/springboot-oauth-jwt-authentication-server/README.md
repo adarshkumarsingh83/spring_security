@@ -1,33 +1,36 @@
 
-# create db and tables
-# generate the public and private key using open ssl cmd refer the doc in help
+### create db and tables
+### generate the public and private key using open ssl cmd refer the doc in help
 
-$ cd src/main/resources
-#To generate the keys
-$ openssl genrsa -out jwt.pem 2048
+* $ cd src/main/resources
+### To generate the keys
+* $ openssl genrsa -out jwt.pem 2048
 
-#To fetch the private keys
-$ openssl rsa -in jwt.pem
-NOTE COPY THE PRIVATE KEY TO CONFIGURATION SERVER
+### To fetch the private keys
+* $ openssl rsa -in jwt.pem
+* NOTE COPY THE PRIVATE KEY TO CONFIGURATION SERVER
 
-# to Fetch the public key
-$ openssl rsa -in jwt.pem -pubout
-NOTE COPY THE PUBLIC KEY TO CONFIGURATION SERVER
+### to Fetch the public key
+* $ openssl rsa -in jwt.pem -pubout
+* NOTE COPY THE PUBLIC KEY TO CONFIGURATION SERVER
 
----------------------------------------------------------------------------------------------------------------------
-$ cd src/main/resources
-VV29158:resources akumar38$ pwd
+----
+* $ cd src/main/resources
+* $ pwd
+````
 springboot-oauth-jwt-server/src/main/resources
+````
 
-
-$ openssl genrsa -out jwt.pem 2048
+* $ openssl genrsa -out jwt.pem 2048
+````
 Generating RSA private key, 2048 bit long modulus
 ............................................................+++
 ................+++
 e is 65537 (0x10001)
+````
 
-$  openssl rsa -in jwt.pem
-
+* $ openssl rsa -in jwt.pem
+````
 writing RSA key
 -----BEGIN RSA PRIVATE KEY-----
 MIIEowIBAAKCAQEAomA12xUrnwcWgQHM+pdvJr6P/fWwmMSwOWiRfcheKGC3Scv0
@@ -56,9 +59,10 @@ dodnOpAEjEUdJZp/bFCdADcwqh6glOJPgPeToh4/mCyUdC0D7vqJnM9lAY1wPff7
 dtjVtIUNXvp9kRCkBCQnyvzxNsnn1AhfDnnaVjzwv5RdBoBecj2su6D4CLGQsgDF
 QlHUqIHOqzqUD8mj3HD+d2rRZg8WbNd09xWL1sm+uri4PjMSDRMc
 -----END RSA PRIVATE KEY-----
+````
 
-$ openssl rsa -in jwt.pem -pubout
-
+* $ openssl rsa -in jwt.pem -pubout
+````
 writing RSA key
 -----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAomA12xUrnwcWgQHM+pdv
@@ -69,27 +73,31 @@ aPrtmoYvBClR7eiezeJKKWrmMXPYo/7ETZVSNJeVz9Hq/gT3U/gpxqgkvJjWmQT1
 O9FxSEfcCnNmoREkWkvhNxrYjE9ntCbrOMtWZHsc4cefKeGaXPzFuukq+Siw49SE
 jQIDAQAB
 -----END PUBLIC KEY-----
-
+````
+````
 $ curl --location --request POST 'localhost:9090/oauth/token' \
   --header 'Authorization: Basic ZXNwYXJrLWFwcDpzZWNyZXQ=' \
   --header 'Content-Type: application/x-www-form-urlencoded' \
   --data-urlencode 'grant_type=password' \
   --data-urlencode 'username=adarsh' \
   --data-urlencode 'password=adarsh'
-
+````
+````
 $ curl --location --request GET 'localhost:9090/oauth/check_token?token=<JWT-TOKEN-VALUE>' \
   --header 'Authorization: Basic ZXNwYXJrLWFwcDpzZWNyZXQ='
-
+````
+````
  $ curl --location --request POST 'localhost:9090/oauth/token' \
    --header 'Authorization: Basic ZXNwYXJrLWFwcDpzZWNyZXQ=' \
    --header 'Content-Type: application/x-www-form-urlencoded' \
    --data-urlencode 'grant_type=password' \
    --data-urlencode 'username=radha' \
    --data-urlencode 'password=radha'
-
+````
+````
  $ curl --location --request GET 'localhost:9090/oauth/check_token?token=<JWT-TOKEN-VALUE>' \
   --header 'Authorization: Basic ZXNwYXJrLWFwcDpzZWNyZXQ='
-
+````
 
 
 
