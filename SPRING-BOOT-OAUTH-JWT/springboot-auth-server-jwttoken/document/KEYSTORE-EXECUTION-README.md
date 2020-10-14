@@ -1,5 +1,6 @@
-----------------------------------------------------------------------------------------------------------------
- EXAMPLE
+
+### EXAMPLE
+````
  $ keytool -genkeypair -alias jwt -keyalg RSA --keypass password -keystore jwt.jks --storepass password
  What is your first and last name?
    [Unknown]:  adarsh kumar
@@ -18,9 +19,11 @@
 
  Warning:
  The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore jwt.jks -destkeystore jwt.jks -deststoretype pkcs12".
+````
 
-EXAMPLE
-8$ keytool -importkeystore -srckeystore jwt.jks -destkeystore jwt.jks -deststoretype pkcs12
+### EXAMPLE
+````
+$ keytool -importkeystore -srckeystore jwt.jks -destkeystore jwt.jks -deststoretype pkcs12
 Enter source keystore password:
 Entry for alias jwt successfully imported.
 Import command completed:  1 entries successfully imported, 0 entries failed or cancelled
@@ -28,9 +31,11 @@ Import command completed:  1 entries successfully imported, 0 entries failed or 
 Warning:
 Migrated "jwt.jks" to Non JKS/JCEKS. The JKS keystore is backed up as "jwt.jks.old".
 $
+````
 
-EXAMPLE
-8$ keytool -list -rfc --keystore jwt.jks | openssl x509 -inform pem -pubkey
+### EXAMPLE
+````
+$ keytool -list -rfc --keystore jwt.jks | openssl x509 -inform pem -pubkey
 Enter keystore password:  password
 -----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtTjXLEch9eU6ujI9CJ2S
@@ -62,3 +67,4 @@ pQBaEvBlZfyGB1e3HjfavpkEkQaU1ZpzyuaHMWKOGcYUPVkYjiiFEGI7npkGXgHo
 JpO47n2DK+QvO0t5sdFCQUnx1Q6qjUIXEBv3invCdevq48Wso6hQ1YHGVvXRaA+E
 bMZf3PhvwjM4pNaHd6vYu/lwfMM5ZtUMsw==
 -----END CERTIFICATE-----
+````
