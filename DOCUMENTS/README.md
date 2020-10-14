@@ -8,6 +8,7 @@
 ----
 ### OAUTH 
 ![](https://github.com/adarshkumarsingh83/spring_security/blob/master/DOCUMENTS/image/OAUTH.png)
+### [OAUTH2 FLOW DOCUMENT](https://github.com/adarshkumarsingh83/spring_security/blob/master/DOCUMENTS/OUTH2_DIGRAM_README.md)
 ### [OAUTH DOCUMENT](https://github.com/adarshkumarsingh83/spring_security/blob/master/DOCUMENTS/OAUTH_README.md)
 ### [OAUTH STEP BY STEP DOCUMENT](https://github.com/adarshkumarsingh83/spring_security/blob/master/DOCUMENTS/OAUTH_STEP_BY_STEP_README.md)
 
