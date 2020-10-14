@@ -1,4 +1,4 @@
-
+````
 
      +--------+                               +---------------+
      |        |--(A)- Authorization Request ->|   Resource    |
@@ -94,3 +94,4 @@
    (H)  The authorization server authenticates the client and validates
         the refresh token, and if valid, issues a new access token (and,
         optionally, a new refresh token).
+````
