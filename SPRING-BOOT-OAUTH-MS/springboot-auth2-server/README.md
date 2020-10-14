@@ -1,18 +1,21 @@
 
-$ mvn clean package
+### To build 
+* $ mvn clean package
 
-$ mvn spring-boot:run
+### To run 
+* $ mvn spring-boot:run
 
-# to get the token
-
-
+### to get the token
+````
 $ curl --location --request POST 'localhost:9090/oauth/token' \
 --header 'Authorization: Basic ZXNwYXJrLWFwcDpzZWNyZXQ=' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'grant_type=password' \
 --data-urlencode 'username=admin' \
 --data-urlencode 'password=admin'
-
+````
+* Response 
+````
 {
   "access_token": "c8c1505e-7330-48a2-a702-df2a6b75962a",
   "token_type": "bearer",
@@ -20,10 +23,12 @@ $ curl --location --request POST 'localhost:9090/oauth/token' \
   "expires_in": 43042,
   "scope": "read write"
 }
+````
 
-#To check the token details
-$ curl localhost:9090/oauth/check_token?token=<>
-$ curl localhost:9090/oauth/check_token?token=c8c1505e-7330-48a2-a702-df2a6b75962a
+### To check the token details
+* $ curl localhost:9090/oauth/check_token?token=<>
+* $ curl localhost:9090/oauth/check_token?token=c8c1505e-7330-48a2-a702-df2a6b75962a
+````
 {
   "active": true,
   "exp": 1587195082,
@@ -38,7 +43,6 @@ $ curl localhost:9090/oauth/check_token?token=c8c1505e-7330-48a2-a702-df2a6b7596
     "write"
   ]
 }
-
-
+````
 
 
