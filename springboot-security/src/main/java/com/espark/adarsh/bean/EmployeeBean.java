@@ -1,5 +1,6 @@
 package com.espark.adarsh.bean;
 
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,8 +8,8 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
+@AllArgsConstructor(access = AccessLevel.PUBLIC)
 public class EmployeeBean implements Serializable {
 
     private Long id;

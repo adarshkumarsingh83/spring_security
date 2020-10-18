@@ -12,5 +12,4 @@ public class AuthenticationRequestBean {
     private String userName;
     private String userPwd;
 
-
 }

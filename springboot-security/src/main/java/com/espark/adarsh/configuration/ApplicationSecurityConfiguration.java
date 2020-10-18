@@ -2,6 +2,7 @@ package com.espark.adarsh.configuration;
 
 import com.espark.adarsh.filter.JwtSecurityFilter;
 import com.espark.adarsh.service.UserDetailsServiceImpl;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -17,6 +18,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import javax.annotation.Priority;
 
+@Slf4j
 @Priority(1)
 @EnableWebSecurity
 public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapter {

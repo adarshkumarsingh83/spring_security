@@ -1,5 +1,6 @@
 package com.espark.adarsh.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -12,6 +13,7 @@ import javax.transaction.Transactional;
 import java.util.*;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 

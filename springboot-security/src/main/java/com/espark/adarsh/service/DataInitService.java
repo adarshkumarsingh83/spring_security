@@ -4,6 +4,7 @@ import com.espark.adarsh.entity.User;
 import com.espark.adarsh.entity.UserRole;
 import com.espark.adarsh.repository.UserRepository;
 import com.espark.adarsh.repository.UserRoleRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -16,6 +17,7 @@ import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 import javax.transaction.Transactional;
 
+@Slf4j
 @Service
 public class DataInitService {
 

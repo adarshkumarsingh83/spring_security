@@ -1,6 +1,5 @@
 package com.espark.adarsh.filter;
 
-import com.espark.adarsh.service.AuthenticationService;
 import com.espark.adarsh.util.JwtUtilService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
