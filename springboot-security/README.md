@@ -5,6 +5,9 @@
 ### To execute 
 * $ mvn spring-boot:run
 
+### To hit the swagger url
+* http://localhost:8080/swagger-ui.html
+
 ### log into the homepage of db
 * http://localhost:8080/h2-console
 ``` username, pwd , dburl and db driver class is mentioned in application.properties file ```

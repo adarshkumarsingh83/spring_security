@@ -36,7 +36,7 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/h2-console/**");
+        web.ignoring().antMatchers("/h2-console/**","/swagger-ui.html","/favicon.ico","/swagger-ui/**","/v*/v1/api-docs/**");
     }
 
     @Override
