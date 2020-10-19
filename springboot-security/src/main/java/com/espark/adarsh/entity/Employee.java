@@ -1,6 +1,7 @@
 package com.espark.adarsh.entity;
 
 import com.espark.adarsh.bean.EmployeeBean;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -33,6 +34,7 @@ public class Employee {
         this.career = career;
     }
 
+    @JsonIgnore
     public EmployeeBean getEmployeeBean() {
         return new EmployeeBean(this.id, this.firstName, this.lastName, this.career);
     }

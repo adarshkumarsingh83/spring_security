@@ -1,5 +1,6 @@
 package com.espark.adarsh.service;
 
+import com.espark.adarsh.bean.EmployeeBean;
 import com.espark.adarsh.entity.Employee;
 import com.espark.adarsh.exception.ResourceNotFound;
 import com.espark.adarsh.repository.EmployeeRepository;
@@ -17,10 +18,11 @@ public class EmployeeService {
     @Autowired
     EmployeeRepository employeeRepository;
 
-    public List<Employee> getAllEmployee() throws ResourceNotFound {
+    public List<EmployeeBean> getAllEmployee() throws ResourceNotFound {
         if (this.employeeRepository.count() > 0) {
-            List<Employee> employeeList = this.employeeRepository.findAll()
+            List<EmployeeBean> employeeList = this.employeeRepository.findAll()
                     .stream()
+                    .map(employee -> employee.getEmployeeBean())
                     .collect(Collectors.toList());
             return employeeList;
         } else {
@@ -28,31 +30,31 @@ public class EmployeeService {
         }
     }
 
-    public Employee getEmployee(Long id) throws ResourceNotFound {
+    public EmployeeBean getEmployee(Long id) throws ResourceNotFound {
         if (this.employeeRepository.existsById(id)) {
-            return this.employeeRepository.findById(id).get();
+            return this.employeeRepository.findById(id).get().getEmployeeBean();
         } else {
             throw new ResourceNotFound("user not found with " + id);
         }
     }
 
-    public Employee removeEmployee(Long id) throws ResourceNotFound {
+    public EmployeeBean removeEmployee(Long id) throws ResourceNotFound {
         if (this.employeeRepository.existsById(id)) {
             Employee employee = this.employeeRepository.findById(id).get();
             this.employeeRepository.deleteById(id);
-            return employee;
+            return employee.getEmployeeBean();
         } else {
             throw new ResourceNotFound("user not found with " + id);
         }
     }
 
-    public Employee saveEmployee(Employee employee) {
-        return this.employeeRepository.save(employee);
+    public EmployeeBean saveEmployee(Employee employee) {
+        return this.employeeRepository.save(employee).getEmployeeBean();
     }
 
-    public Employee updateEmployee(Long id, Employee employee) throws ResourceNotFound {
+    public EmployeeBean updateEmployee(Long id, Employee employee) throws ResourceNotFound {
         if (this.employeeRepository.existsById(id)) {
-            return this.employeeRepository.save(employee);
+            return this.employeeRepository.save(employee).getEmployeeBean();
         } else {
             throw new ResourceNotFound("user not found with " + id);
         }

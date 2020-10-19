@@ -26,46 +26,55 @@ $ curl -v -X POST -H "Content-Type: application/json" \
    http://localhost:8080/login
 ````
 ### To access endpoint with token 
+* $ curl -v -H "X-Token: <token>"   http://localhost:8080/api/message
+
+### To access user details
+* $ curl -v -H "X-Token: <token>"  http://localhost:8080/user/adarsh
+  
 ````
-$ curl -v -H "X-Token: <token>" \
-  http://localhost:8080/api/message
+{
+  "data": {
+    "id": 1,
+    "userName": "adarsh",
+    "password": null,
+    "userRoles": [
+      "ADMIN"
+    ]
+  },
+  "message": "User Details"
+}
 ````
 
 ### To Fetch the Employee Data 
-* $ curl -v -H "X-Token: TOKEN-VALUE-XXX" \
-      http://localhost:8080/api/employees
+* $ curl -v -H "X-Token: TOKEN-VALUE-XXX" http://localhost:8080/api/employees
 ````
-HTTP/1.1 200 
-Connection: keep-alive
-Content-Type: application/json
-Date: Sat, 17 Oct 2020 16:55:00 GMT
-Keep-Alive: timeout=60
-Transfer-Encoding: chunked
-
-[
+{
+  "data": [
     {
-        "career": "It",
-        "firstName": "adarsh",
-        "id": 1,
-        "lastName": "kumar"
+      "id": 1,
+      "firstName": "adarsh",
+      "lastName": "kumar",
+      "career": "It"
     },
     {
-        "career": "IT",
-        "firstName": "radha",
-        "id": 2,
-        "lastName": "singh"
+      "id": 2,
+      "firstName": "radha",
+      "lastName": "singh",
+      "career": "IT"
     },
     {
-        "career": "IT",
-        "firstName": "sonu",
-        "id": 3,
-        "lastName": "singh"
+      "id": 3,
+      "firstName": "sonu",
+      "lastName": "singh",
+      "career": "IT"
     },
     {
-        "career": "Finance",
-        "firstName": "amit",
-        "id": 4,
-        "lastName": "kumar"
+      "id": 4,
+      "firstName": "amit",
+      "lastName": "kumar",
+      "career": "Finance"
     }
-]
+  ],
+  "message": "All User Fetched Successfully"
+}
 ````

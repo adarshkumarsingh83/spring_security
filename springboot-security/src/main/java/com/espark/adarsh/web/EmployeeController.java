@@ -1,6 +1,7 @@
 package com.espark.adarsh.web;
 
 import com.espark.adarsh.bean.ApiResponseBean;
+import com.espark.adarsh.bean.EmployeeBean;
 import com.espark.adarsh.entity.Employee;
 import com.espark.adarsh.exception.ResourceNotFound;
 import com.espark.adarsh.service.EmployeeService;
@@ -27,7 +28,7 @@ public class EmployeeController {
             @ApiResponse(code = 404, message = "Employees not found")
             , @ApiResponse(code = 500, message = "Server Error")})
     @GetMapping("/employees")
-    public ApiResponseBean<List<Employee>> getAllEmployee() throws ResourceNotFound {
+    public ApiResponseBean<List<EmployeeBean>> getAllEmployee() throws ResourceNotFound {
         ApiResponseBean apiResponseBean = new ApiResponseBean();
         apiResponseBean.setData(this.employeeService.getAllEmployee());
         apiResponseBean.setMessage("All User Fetched Successfully");
@@ -39,7 +40,7 @@ public class EmployeeController {
             @ApiResponse(code = 404, message = "Employee not found")
             , @ApiResponse(code = 500, message = "Server Error")})
     @GetMapping("/employee/{id}")
-    public ApiResponseBean<Employee> getEmployee(@PathVariable("id") Long id) throws ResourceNotFound {
+    public ApiResponseBean<EmployeeBean> getEmployee(@PathVariable("id") Long id) throws ResourceNotFound {
         ApiResponseBean apiResponseBean = new ApiResponseBean();
         apiResponseBean.setData(this.employeeService.getEmployee(id));
         apiResponseBean.setMessage("User Fetched Successfully");
@@ -51,7 +52,7 @@ public class EmployeeController {
             @ApiResponse(code = 404, message = "Employee not found")
             , @ApiResponse(code = 500, message = "Server Error")})
     @DeleteMapping("/employees/{id}")
-    public ApiResponseBean<Employee> removeEmployee(@PathVariable("id") Long id) throws ResourceNotFound {
+    public ApiResponseBean<EmployeeBean> removeEmployee(@PathVariable("id") Long id) throws ResourceNotFound {
         ApiResponseBean apiResponseBean = new ApiResponseBean();
         apiResponseBean.setData(this.employeeService.removeEmployee(id));
         apiResponseBean.setMessage("User Deleted Successfully");
@@ -64,7 +65,7 @@ public class EmployeeController {
             , @ApiResponse(code = 500, message = "Server Error")
             , @ApiResponse(code = 200, message = "Employee Created", responseContainer = "EsparkResponseBean")})
     @PostMapping("/employee")
-    public ApiResponseBean<Employee> saveEmployee(@RequestBody Employee employee) {
+    public ApiResponseBean<EmployeeBean> saveEmployee(@RequestBody Employee employee) {
         ApiResponseBean apiResponseBean = new ApiResponseBean();
         apiResponseBean.setData(this.employeeService.saveEmployee(employee));
         apiResponseBean.setMessage("User Created Successfully");
@@ -77,7 +78,7 @@ public class EmployeeController {
             , @ApiResponse(code = 500, message = "Server Error")
             , @ApiResponse(code = 200, message = "Employee Updated", responseContainer = "EsparkResponseBean")})
     @PutMapping("/employee/{id}")
-    public ApiResponseBean<Employee> updateEmployee(@PathVariable("id") Long id,
+    public ApiResponseBean<EmployeeBean> updateEmployee(@PathVariable("id") Long id,
                                                     @RequestBody Employee employee) throws ResourceNotFound {
         ApiResponseBean apiResponseBean = new ApiResponseBean();
         apiResponseBean.setData(this.employeeService.updateEmployee(id, employee));

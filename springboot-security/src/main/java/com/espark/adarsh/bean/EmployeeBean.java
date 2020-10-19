@@ -1,5 +1,6 @@
 package com.espark.adarsh.bean;
 
+import com.espark.adarsh.entity.Employee;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,4 +17,12 @@ public class EmployeeBean implements Serializable {
     private String firstName;
     private String lastName;
     private String career;
+
+    public EmployeeBean(Employee employee){
+        this.id = employee.getId();
+        this.firstName = employee.getFirstName();
+        this.lastName = employee.getLastName();
+        this.career = employee.getCareer();
+
+    }
 }
