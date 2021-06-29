@@ -19,11 +19,26 @@
 
 * $ curl -v http://localhost:8080/api/message
 
-### To get the login token 
+### To get the login token
+* $ curl -v -X POST -H "Content-Type: application/json" \
+    -d '{"userName":"adarsh","userPwd":"adarsh"}' \
+     http://localhost:8080/login 
 ````
-$ curl -v -X POST -H "Content-Type: application/json" \
-  -d '{"userName":"adarsh","userPwd":"adarsh"}' \
-   http://localhost:8080/login
+{
+  "data": {
+    "token": "X-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZGFyc2giLCJleHAiOjE2MDMxNjQ0ODEsImlhdCI6MTYwMzEyODQ4MX0.Rmbu_vQ1eQtuX0Zg6EUs_V1HY5LlkOdgFQIZx3Nxnzk",
+    "message": "Token for Authenticated User",
+    "userBean": {
+      "id": 1,
+      "userName": "adarsh",
+      "password": null,
+      "userRoles": [
+        "ADMIN"
+      ]
+    }
+  },
+  "message": "token generated"
+}
 ````
 ### To access endpoint with token 
 * $ curl -v -H "X-Token: <token>"   http://localhost:8080/api/message

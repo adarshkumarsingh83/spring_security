@@ -16,13 +16,15 @@ public class EmployeeBean implements Serializable {
     private Long id;
     private String firstName;
     private String lastName;
-    private String career;
+    private String email;
+    private String profession;
 
     public EmployeeBean(Employee employee){
         this.id = employee.getId();
         this.firstName = employee.getFirstName();
         this.lastName = employee.getLastName();
-        this.career = employee.getCareer();
+        this.email = employee.getEmail();
+        this.profession = employee.getProfession();
 
     }
 }

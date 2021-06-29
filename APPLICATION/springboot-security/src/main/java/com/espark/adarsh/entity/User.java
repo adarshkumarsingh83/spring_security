@@ -23,7 +23,9 @@ public class User implements Serializable {
 
     private String userName;
 
-    private String password;
+    private String userPwd;
+
+    private String email;
 
     @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     @JoinTable(
@@ -48,6 +50,8 @@ public class User implements Serializable {
         userBean.setId(this.getId());
         userBean.setUserName(this.getUserName());
         userBean.setUserRoles(roles);
+        userBean.setEmail(this.getEmail());
+        userBean.setIsAdmin(roles.contains("ADMIN"));
         return userBean;
     }
 }

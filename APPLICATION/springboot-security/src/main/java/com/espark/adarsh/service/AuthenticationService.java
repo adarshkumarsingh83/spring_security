@@ -1,6 +1,7 @@
 package com.espark.adarsh.service;
 
 import com.espark.adarsh.bean.AuthenticationResponseBean;
+import com.espark.adarsh.bean.UserBean;
 import com.espark.adarsh.exception.ApplicationException;
 import com.espark.adarsh.util.JwtUtilService;
 import lombok.extern.slf4j.Slf4j;
@@ -47,7 +48,8 @@ public class AuthenticationService {
         log.info("label=generateToken execution");
         UserDetails userDetails = this.userDetailsService.loadUserByUsername(userName);
         String token = this.jwtUtilService.generateToken(userDetails);
-        return new AuthenticationResponseBean(token, "X-TOKEN");
+        UserBean userBean = this.userDetailsService.getUserDetailBean(userName);
+        return new AuthenticationResponseBean("X-TOKEN: "+token,"Token for Authenticated User" , userBean);
     }
 
 }

@@ -24,10 +24,10 @@ public class SecurityController {
 
 
     @PostMapping("/login")
-    public ResponseEntity<AuthenticationResponseBean> authenticateAndGenerateToken(@RequestBody AuthenticationRequestBean requestBean) {
+    public ResponseEntity<ApiResponseBean<AuthenticationResponseBean>> authenticateAndGenerateToken(@RequestBody AuthenticationRequestBean requestBean) {
         log.info("label=authenticateAndGenerateToken() execution");
         if (this.authenticationService.authenticateUser(requestBean.getUserName(), requestBean.getUserPwd())) {
-            return ResponseEntity.ok(this.authenticationService.generateToken(requestBean.getUserName()));
+            return ResponseEntity.ok(new ApiResponseBean<AuthenticationResponseBean>(this.authenticationService.generateToken(requestBean.getUserName()), "token generated", null));
         }
         throw new BadCredentialsException("Invalid User & Pwd ");
     }

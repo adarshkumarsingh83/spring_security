@@ -52,28 +52,40 @@ public class DataInitService {
 
         User adarsh = new User();
         adarsh.setUserName("adarsh");
-        adarsh.setPassword("adarsh");
+        adarsh.setUserPwd("adarsh");
+        adarsh.setEmail("adarsh@kumar");
         adarsh = this.userRepository.save(adarsh);
 
         User radha = new User();
         radha.setUserName("radha");
-        radha.setPassword("radha");
+        radha.setUserPwd("radha");
+        radha.setEmail("radha@singh");
         radha = this.userRepository.save(radha);
 
         User user = new User();
         user.setUserName("user");
-        user.setPassword("user");
+        user.setUserPwd("user");
+        user.setEmail("user@espark");
         user = this.userRepository.save(user);
+
+        User admin = new User();
+        admin.setUserName("admin");
+        admin.setUserPwd("admin");
+        admin.setEmail("admin@espark");
+        admin = this.userRepository.save(admin);
 
         User guest = new User();
         guest.setUserName("guest");
-        guest.setPassword("guest");
+        guest.setUserPwd("guest");
+        guest.setEmail("guest@espark");
         guest = this.userRepository.save(guest);
 
         adarsh.setUserRole(adminRole);
         this.userRepository.save(adarsh);
         radha.setUserRole(adminRole);
         this.userRepository.save(radha);
+        admin.setUserRole(adminRole);
+        this.userRepository.save(admin);
         user.setUserRole(userRole);
         this.userRepository.save(user);
         guest.setUserRole(guestRole);
@@ -81,6 +93,7 @@ public class DataInitService {
 
         adminRole.setUser(adarsh);
         adminRole.setUser(radha);
+        adminRole.setUser(admin);
         this.userRoleRepository.save(adminRole);
 
         userRole.setUser(user);

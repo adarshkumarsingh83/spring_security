@@ -16,27 +16,30 @@ public class Employee {
     private Long id;
     private String firstName;
     private String lastName;
-    private String career;
+    private String email;
+    private String profession;
 
     public Employee() {
     }
 
-    public Employee(String firstName, String lastName, String career) {
+    public Employee(String firstName, String lastName,String email, String profession) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.career = career;
+        this.email = email;
+        this.profession = profession;
     }
 
-    public Employee(Long id, String firstName, String lastName, String career) {
+    public Employee(Long id, String firstName, String lastName,String email, String profession) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.career = career;
+        this.email = email;
+        this.profession = profession;
     }
 
     @JsonIgnore
     public EmployeeBean getEmployeeBean() {
-        return new EmployeeBean(this.id, this.firstName, this.lastName, this.career);
+        return new EmployeeBean(this.id, this.firstName, this.lastName,this.email, this.profession);
     }
 
 }

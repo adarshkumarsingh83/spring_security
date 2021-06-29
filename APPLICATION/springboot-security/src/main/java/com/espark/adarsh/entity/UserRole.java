@@ -23,6 +23,12 @@ public class UserRole implements Serializable {
     @ManyToMany(mappedBy = "roles", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     private List<User> user = new LinkedList<>();
 
+    public UserRole() {
+    }
+
+    public UserRole(String roleName) {
+        this.roleName = roleName;
+    }
 
     public void setUser(User user){
         this.user.add(user);

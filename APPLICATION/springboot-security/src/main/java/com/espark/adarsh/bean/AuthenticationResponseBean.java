@@ -10,5 +10,6 @@ public class AuthenticationResponseBean {
 
     private String token;
     private String message;
+    private UserBean userBean;
 
 }
