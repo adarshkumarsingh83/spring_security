@@ -143,6 +143,7 @@ The AuthenticationEntryPoint is used to request credentials from the client
 ![img](./image/Spring-security-Flow.png)
 ![img](./image/1-part.png)
 ![img](./image/2-part.png)
+![img](./image/ss-flow.png)
 ```
 title Spring security Flow 
 actor Client
