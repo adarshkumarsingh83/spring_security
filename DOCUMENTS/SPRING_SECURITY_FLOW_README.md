@@ -139,3 +139,40 @@ The AuthenticationEntryPoint is used to request credentials from the client
 * SwitchUserFilter
 
 
+### Flow 
+![img](./image/Spring-security-Flow.png)
+![img](./image/1-part.png)
+![img](./image/2-part.png)
+```
+title Spring security Flow 
+actor Client
+Client->Filter: 1.Page Access Request
+note right of Client: try to acces secured page 
+Filter->Client: 2.Unauthenticated Request 
+note left of Filter: redirected to login page 
+Client->Filter: 3.Input the Credentials 
+note right of Client: username & passward provided to login page 
+Filter->AuthenticationManager:4.invoke the autenticated() method 
+note right of Filter: Authenticated object with username & pwd
+AuthenticationManager->ProviderManager: 5.will invoke ProviderManager for supporting authentication 
+ProviderManager->X1Provider: 6.invoke issupported() for autthentication 
+note right of ProviderManager: return true is support otherwise false 
+ProviderManager->X2Provider: 7.invoke issupported() for autthentication 
+note right of ProviderManager: return true is support otherwise false 
+ProviderManager->XNProvider: 8.invoke issupported() for autthentication 
+note right of ProviderManager: return true is support otherwise false 
+XNProvider->ProviderManager: 9.return true for supporting authentication 
+note left of XNProvider: supprted for authentication is avliable 
+ProviderManager->XNProvider: 10.send the auth object for authentication 
+XNProvider-> UserDetailsService: 11.XNProvider users UserDetailsService for getting the user info 
+UserDetailsService->XNProvider: 12.will return the UserDetails object to the XNProvider
+note left of XNProvider: will recived UserDetail object containing user info
+XNProvider->ProviderManager: 13.return the auth object with user info 
+note left of ProviderManager: recieved auth object with user info.
+ProviderManager->ProviderManager: 14.provider manger will use the auth object
+note right of ProviderManager: based on auth object recieved authentication is perform 
+ProviderManager->Filter: 15.return auth obect with role and other info of the user 
+Filter->Filter: 16.set the security context with auth object 
+Filter -> Controller: 17.redirect the user request for serving the response 
+Controller->Client: 18.send the requested page 
+```
