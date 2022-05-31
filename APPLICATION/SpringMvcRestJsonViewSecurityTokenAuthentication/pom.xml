@@ -61,7 +61,7 @@
         <project.name>SpringMvcRestJsonViewSecurityTokenAuthentication</project.name>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.7</java.version>
-        <spring.version>5.2.9.RELEASE</spring.version>
+        <spring.version>5.2.22.RELEASE</spring.version>
         <spring.security.version>5.2.9.RELEASE</spring.security.version>
         <spring.version.security.tag>4.0.1.RELEASE</spring.version.security.tag>
         <javax.servlet.version>2.5</javax.servlet.version>
