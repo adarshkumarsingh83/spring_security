@@ -36,8 +36,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Service;
 import org.springframework.web.filter.GenericFilterBean;
@@ -65,7 +65,7 @@ public class AuthenticationTokenProcessingFilter extends GenericFilterBean {
 
     @Autowired(required = true)
     private AuthenticationManager authenticationManager;
-    final Md5PasswordEncoder encoder = new Md5PasswordEncoder();
+    final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
     private SecurityContextProvider securityContextProvider  = new SecurityContextProvider();
     private WebAuthenticationDetailsSource webAuthenticationDetailsSource = new WebAuthenticationDetailsSource();

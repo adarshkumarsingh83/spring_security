@@ -44,9 +44,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.stereotype.Controller;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -83,11 +82,10 @@ public class RestAuthenticationController {
     private AuthenticationManager authenticationManager;
 
     @Autowired(required = true)
-    private Md5PasswordEncoder md5PasswordEncoder;
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     private SecurityContextProvider securityContextProvider = new SecurityContextProvider();
 
-    // http://localhost:8080/
     @RequestMapping(value = "/authenticate/login", method = RequestMethod.POST)
     public
     @ResponseView(AuthenticationView.class)
@@ -101,7 +99,7 @@ public class RestAuthenticationController {
         final String password = map.get(PASSWORD);
         User user = null;
         try {
-            user = userManager.getUser(username, this.md5PasswordEncoder.encodePassword(password,null));
+            user = userManager.getUser(username, this.bCryptPasswordEncoder.encode(password));
         } catch (Exception e) {
             logger.error("User Name Or Password Not Found");
             apiServer.setMessage("LOGIN UNSUCCESSFUL ");
@@ -110,7 +108,7 @@ public class RestAuthenticationController {
         }
 
         if (user == null) {
-            final UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(username, this.md5PasswordEncoder.encodePassword(password,null));
+            final UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(username, this.bCryptPasswordEncoder.encode(password));
             final boolean result = this.authenticationManager.authenticate(authentication).isAuthenticated();
 
             if (result) {

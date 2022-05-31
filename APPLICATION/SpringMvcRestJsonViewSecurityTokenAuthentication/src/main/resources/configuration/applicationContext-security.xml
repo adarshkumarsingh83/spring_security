@@ -141,7 +141,7 @@
       <bean id="daoAuthenticationProvider"
             class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
           <property name="userDetailsService" ref="userDetailsServiceImpl"/>
-          <property name="passwordEncoder" ref="md5PasswordEncoder"/>
+          <property name="passwordEncoder" ref="bCryptPasswordEncoder"/>
       </bean>
-      <bean id="md5PasswordEncoder" class="org.springframework.security.authentication.encoding.Md5PasswordEncoder"/>
+    <bean id="bCryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
 </beans>
