@@ -1,5 +1,5 @@
 # Kerberos flow 
-![img](./image/Kerberos-flow.webp)
+![img](./image/Kerberos-flow.jpg)
 
 * Client requests an authentication ticket (TGT) from the Key Distribution Center (KDC)
 * The KDC verifies the credentials and sends back an encrypted TGT and session key
