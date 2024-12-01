@@ -62,7 +62,7 @@
 		<spring.security.version>4.1.0.RELEASE</spring.security.version>
 		<jstl.version>1.2</jstl.version>
 		<javax.servlet.version>3.1.0</javax.servlet.version>
-        <hibernate.version>4.1.0.Final</hibernate.version>
+        <hibernate.version>5.4.24.Final</hibernate.version>
 	</properties>
 
 	<dependencies>
